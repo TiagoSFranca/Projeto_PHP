@@ -2,8 +2,9 @@
 
 namespace app\models;
 
-use Yii;
 
+use yii\db\ActiveRecord;
+use yii\web\IdentityInterface;
 /**
  * This is the model class for table "usuario".
  *
@@ -20,8 +21,10 @@ use Yii;
  * @property Foto[] $fotos
  * @property Acesso $ace
  */
-class Usuario extends \yii\db\ActiveRecord implements  \yii\web\IdentityInterface
+class Usuario extends ActiveRecord implements  IdentityInterface
 {
+    public $fotos;
+    public $downloads;
     /**
      * @inheritdoc
      */

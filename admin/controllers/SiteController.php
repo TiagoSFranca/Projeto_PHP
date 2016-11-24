@@ -2,19 +2,13 @@
 
 namespace app\controllers;
 
-use app\assets\AppAsset;
-use app\models\Download;
 use app\models\Foto;
 use app\models\LoginAdminForm;
-use app\models\Visualizacao;
+use app\models\Usuario;
 use Yii;
-use yii\data\Pagination;
-use yii\data\Sort;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
 
 class SiteController extends Controller
 {
@@ -69,13 +63,20 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $model = new LoginAdminForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->render('index');
+
+        if (($model->load(Yii::$app->request->post()) && $model->login()) || !Yii::$app->user->isGuest) {
+            $usuarios = Usuario::findAll(['ace_id' => 2]);
+            foreach ($usuarios as $usuario){
+                $usuario->fotos = Foto::findByUser($usuario);
+                foreach ($usuario->fotos as $foto){
+                    $usuario->downloads += $foto->getDownloads()->count();
+                }
+            }
+            return $this->render('index',['users'=>$usuarios]);
         }
-        if(Yii::$app->user->isGuest) {
+        else{
             return $this->render('login', ['model' => $model]);
         }
-        return $this->render('index');
     }
 
     /**
@@ -90,31 +91,4 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    /**
-     * Displays contact page.
-     *
-     * @return string
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
 }

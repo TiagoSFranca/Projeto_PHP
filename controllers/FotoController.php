@@ -12,7 +12,6 @@ namespace app\controllers;
 use app\models\Download;
 use app\models\Foto;
 use app\models\FotoForm;
-use app\models\UsuarioUpdateForm;
 use app\models\Visualizacao;
 use yii\web\Controller;
 use Yii;
@@ -95,7 +94,9 @@ class FotoController extends Controller
     public function actionDelete($id)
     {
         if ($this->verificarLogin()) {
-            unlink(Yii::getAlias('@app') . $this->findModel($id)->foto_caminho);
+            //unlink(Yii::getAlias('@app') . $this->findModel($id)->foto_caminho);
+            Download::deleteAll(['foto_id'=>$id]);
+            Visualizacao::deleteAll(['foto_id'=>$id]);
             $this->findModel($id)->delete();
             Yii::$app->getSession()->setFlash('sucess', 'Exclusão realizada Com Sucesso.');
         }else{

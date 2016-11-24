@@ -2,7 +2,7 @@
 use \yii\bootstrap\Html;
 /* @var $this yii\web\View */
 
-$this->title = 'Perfil';
+$this->title = 'Fotos';
 $script = <<< CSS
 .caption div {
     box-shadow: 0 0 5px #C8C8C8;
@@ -81,7 +81,7 @@ $js = "$(document).ready(function() {
 
 $this->registerCss($script);
 $this->registerJs($js);
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $model->usu_nome;
 ?>
 <div class="usuario-index">
     <p class="alert-success">
@@ -92,7 +92,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="container">
         <div class="row">
             <?php
-            if (sizeof($modelFoto) > 0) {
                 foreach ($modelFoto as $foto) {
                     ?>
                     <div class="col-sm-2">
@@ -128,22 +127,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </p>
                             </div>
                             <a class="ratio img-responsive img-circle"
-                               style="background-image: url(<?= "../.." . $foto->foto_caminho ?>);"></a>
+                               style="background-image: url(<?= "../../.." . $foto->foto_caminho ?>);"></a>
                         </div>
                     </div>
                     <?php
                 }
-            }else{
-
-                ?><i class="glyphicon glyphicon-info-sign gi-4x text-danger"></i>
-                <h3 class="error text-danger">Não há fotos para exibir
-                    <?php
-                    if($teste != null)
-                        echo "com o Parâmetro de Pesquisa: $teste"
-                    ?>.</h3>
-                <?php
-            }
-            ?>
+                ?>
         </div>
     </div>
 </div>

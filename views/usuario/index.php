@@ -3,7 +3,7 @@ use \yii\bootstrap\Html;
 /* @var $this yii\web\View */
 
 $this->title = 'Perfil';
-$script = <<< CSS
+$script = <<<CSS
 .caption div {
     box-shadow: 0 0 5px #C8C8C8;
     transition: all 0.3s ease 0s;
@@ -41,7 +41,7 @@ $script = <<< CSS
     position:absolute;
     top:0;
     right:0;
-    background:rgba(211, 211, 211, 0.75);
+    background:rgba(13, 8, 19, 0.75);
     width:100%;
     height:100%;
     padding:2%;
@@ -64,23 +64,22 @@ $script = <<< CSS
 .gi-4x{font-size: 4em;}
 .gi-5x{font-size: 5em;}
 CSS;
-
-$js = "$(document).ready(function() {
+$js = " $(document).ready(function() {
     $(\"[rel='tooltip']\").tooltip();    
  
     $('.thumbnail').hover(
         function(){
-            $(this).find('.caption').slideDown(250); 
+            $(this).find('.caption').slideDown(250); //.fadeIn(250)
         },
         function(){
-            $(this).find('.caption').slideUp(250);
+            $(this).find('.caption').slideUp(250); //.fadeOut(205)
         }
     ); 
  });";
 
-
 $this->registerCss($script);
 $this->registerJs($js);
+
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="usuario-index">

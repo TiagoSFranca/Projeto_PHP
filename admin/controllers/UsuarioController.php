@@ -9,19 +9,13 @@
 namespace app\controllers;
 
 
-use app\assets\AppAsset;
-use app\models\Download;
-use app\models\Foto;
-use app\models\LoginForm;
 use app\models\Usuario;
 use app\models\UsuarioForm;
 use app\models\UsuarioMailForm;
 use app\models\UsuarioPasswordForm;
 use app\models\UsuarioUpdateForm;
-use app\models\Visualizacao;
 use yii\web\Controller;
 use Yii;
-use yii\filters\AccessControl;
 
 class UsuarioController extends Controller
 {
@@ -41,84 +35,80 @@ class UsuarioController extends Controller
         }
         return true;
     }
-    public function actionIndex(){
-        if($this->verificarLogin()) {
-            $model = Yii::$app->user;
-            $teste = Yii::$app->getRequest()->getQueryParam('q');
-            if ($teste != null) {
-                $modelFoto = Foto::findByLike($teste, $model->getId());
-            } else {
-                $modelFoto = Foto::findByUser($model->getId());
-            }
 
-            foreach ($modelFoto as $foto) {
-                $foto->foto_downloads = Download::find()->where(['foto_id' => $foto->foto_id])->count();
-                $foto->foto_views = Visualizacao::find()->where(['foto_id' => $foto->foto_id])->count();
+    public function actionConfig(){
+        if($this->verificarLogin()) {
+            $user = $this->findModel(Yii::$app->user->identity->usu_login);
+            $model = new UsuarioForm();
+            $model->usu_login = $user->usu_login;
+            $model->usu_nome = $user->usu_nome;
+            $model->usu_data_nascimento = $user->usu_data_nascimento;
+            $model->usu_sexo = $user->usu_sexo;
+            $model->_user = $user;
+            if ($model->load(Yii::$app->request->post()) && $model->atualizarUsuario()) {
+                Yii::$app->getSession()->setFlash('sucess', 'Dados alterados Com Sucesso.');
+                $this->goHome();
+            } else {
+                return $this->render('config', [
+                    'model' => $model,
+                ]);
             }
-            return $this->render('index', [
-                'model' => $model, 'modelFoto' => $modelFoto, 'teste' => $teste
-            ]);
+        }else{
+            $this->goHome();
+        }
+    }
+    public function actionCreate()
+    {
+        if($this->verificarLogin()) {
+            $model = new UsuarioForm();
+            if ($model->load(Yii::$app->request->post()) && $model->criarUsuario()) {
+                //Yii::$app->set
+                Yii::$app->user->logout();
+                $this->goHome();
+            } else {
+                $model->usu_sexo = 'M';
+                return $this->render('create', [
+                    'model' => $model,
+                ]);
+            }
         }else{
             $this->goHome();
         }
     }
 
-    public function actionConfig(){
-        $user = $this->findModel(Yii::$app->user->identity->usu_login);
-        $model = new UsuarioForm();
-        $model->usu_login = $user->usu_login;
-        $model->usu_nome = $user->usu_nome;
-        $model->usu_data_nascimento = $user->usu_data_nascimento;
-        $model->usu_sexo = $user->usu_sexo;
-        $model->_user = $user;
-        if ($model->load(Yii::$app->request->post()) && $model->atualizarUsuario()) {
-            Yii::$app->getSession()->setFlash('sucess', 'Cadastro realizado Com Sucesso.');
-            return $this->redirect(["/usuario/index"]);
-        }else {
-            return $this->render('config', [
-                'model' => $model,
-            ]);
-        }
-    }
-    public function actionCreate()
-    {
-        $model = new UsuarioForm();
-        if ($model->load(Yii::$app->request->post()) && $model->criarUsuario()) {
-            Yii::$app->getSession()->setFlash('sucess', 'Cadastro realizado Com Sucesso.');
-            return $this->redirect(["/usuario/login"]);
-        }else {
-            $model->usu_sexo = 'M';
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
-    }
-
     public function actionPassword(){
-        $model = new UsuarioPasswordForm();
-        $model->usu_id = Yii::$app->user->identity->getId();
-        if ($model->load(Yii::$app->request->post()) && $model->atualizarSenha()) {
-            Yii::$app->getSession()->setFlash('sucess', 'Senha Alterada Com Sucesso.');
-            return $this->redirect(["/usuario/index"]);
-        }else {
-            return $this->render('password', [
-                'model' => $model,
-            ]);
+        if($this->verificarLogin()) {
+            $model = new UsuarioPasswordForm();
+            $model->usu_id = Yii::$app->user->identity->getId();
+            if ($model->load(Yii::$app->request->post()) && $model->atualizarSenha()) {
+                Yii::$app->getSession()->setFlash('sucess', 'Senha Alterada Com Sucesso.');
+                return $this->redirect(["/usuario/index"]);
+            } else {
+                return $this->render('password', [
+                    'model' => $model,
+                ]);
+            }
+        }else{
+            $this->goHome();
         }
     }
 
 
     public function actionMail(){
-        $user = $this->findModel(Yii::$app->user->identity->usu_login);
-        $model = new UsuarioMailForm();
-        $model->_user = $user;
-        if ($model->load(Yii::$app->request->post()) && $model->atualizarEmail()) {
-            Yii::$app->getSession()->setFlash('sucess', 'Senha Alterada Com Sucesso.');
-            return $this->redirect(["/usuario/index"]);
-        }else {
-            return $this->render('mail', [
-                'model' => $model,
-            ]);
+        if($this->verificarLogin()) {
+            $user = $this->findModel(Yii::$app->user->identity->usu_login);
+            $model = new UsuarioMailForm();
+            $model->_user = $user;
+            if ($model->load(Yii::$app->request->post()) && $model->atualizarEmail()) {
+                Yii::$app->getSession()->setFlash('sucess', 'Senha Alterada Com Sucesso.');
+                return $this->redirect(["/usuario/index"]);
+            } else {
+                return $this->render('mail', [
+                    'model' => $model,
+                ]);
+            }
+        }else{
+            $this->goHome();
         }
     }
     protected function findModel($usuario)

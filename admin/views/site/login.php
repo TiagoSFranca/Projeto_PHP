@@ -4,9 +4,6 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use yii\widgets\ActiveForm;
 
@@ -47,6 +44,11 @@ $this->title = 'Login Admin';
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
                     <div class="panel panel-default">
+                        <p class="alert-success" style="display: flex">
+                            <?=
+                            Yii::$app->session->getFlash('sucess');
+                            ?>
+                        </p>
                         <div class="panel-body">
                             <h3 class="text-center">
                                 ADMIN</h3>

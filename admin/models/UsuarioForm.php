@@ -108,7 +108,7 @@ class UsuarioForm extends Model
 
     public function criarUsuario(){
             if($this->validate()) {
-                $this->ace_id = 2;
+                $this->ace_id = 1;
                 $usu = new Usuario();
                 $usu->usu_nome = $this->usu_nome;
                 $usu->usu_login = $this->usu_login;

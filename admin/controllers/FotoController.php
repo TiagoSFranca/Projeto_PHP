@@ -11,32 +11,30 @@ namespace app\controllers;
 
 use app\models\Download;
 use app\models\Foto;
-use app\models\FotoForm;
+use app\models\Usuario;
 use app\models\UsuarioUpdateForm;
 use app\models\Visualizacao;
 use yii\web\Controller;
 use Yii;
-use yii\web\UploadedFile;
 
 class FotoController extends Controller
 {
 
 
-    public function actionSend()
-    {
-        $model = new FotoForm();
-        $model->usu_id =  Yii::$app->user->identity->getId();
-        if ($model->load(Yii::$app->request->post())) {
-            $model->foto_caminho = UploadedFile::getInstance($model, 'foto_caminho');
-           if ($model->enviarFoto()) {
-                Yii::$app->getSession()->setFlash('sucess', 'Upload realizado Com Sucesso.');
-                return $this->redirect(["/usuario/index"]);
-            }
-        }else {
-            return $this->render('send', [
-                'model' => $model,
-            ]);
+    public function beforeAction($action){
+        if (!Yii::$app->user->isGuest && Yii::$app->user->identity->ace_id != 1) {
+            Yii::$app->user->logout();
+            return $this->goHome();
+        } else {
+            return $action;
         }
+    }
+
+    private function verificarLogin(){
+        if(Yii::$app->user->identity == null){
+            return false;
+        }
+        return true;
     }
 
     public function actionUpdate($id)
@@ -67,6 +65,28 @@ class FotoController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionList()
+    {
+        $id = Yii::$app->getRequest()->post();
+        if ($this->verificarLogin() && $id != null) {
+            $model = Usuario::findOne(['usu_id'=>$id]);
+                $modelFoto = Foto::findAll(['usu_id'=>$id]);
+
+
+            foreach ($modelFoto as $foto) {
+                $foto->foto_downloads = Download::find()->where(['foto_id' => $foto->foto_id])->count();
+                $foto->foto_views = Visualizacao::find()->where(['foto_id' => $foto->foto_id])->count();
+            }
+            return $this->render('list', [
+                'modelFoto' => $modelFoto,
+                'model'=>$model
+            ]);
+        }else{
+            $this->goHome();
+        }
+    }
+
     public function actionDelete($id)
     {
         unlink(Yii::getAlias('@app').$this->findModel($id)->foto_caminho);
