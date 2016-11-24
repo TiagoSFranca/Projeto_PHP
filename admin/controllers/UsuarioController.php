@@ -10,6 +10,7 @@ namespace app\controllers;
 
 
 use app\models\Usuario;
+use app\models\UsuarioDeleteForm;
 use app\models\UsuarioForm;
 use app\models\UsuarioMailForm;
 use app\models\UsuarioPasswordForm;
@@ -57,6 +58,26 @@ class UsuarioController extends Controller
             $this->goHome();
         }
     }
+
+
+
+    public function actionDelete(){
+        if($this->verificarLogin()) {
+            $model = new UsuarioDeleteForm();
+            $model->usu_id = Yii::$app->user->identity->getId();
+            if ($model->load(Yii::$app->request->post()) && $model->deletarUsuario()) {
+                Yii::$app->getSession()->setFlash('sucess', 'Usuario Deletado.');
+                return $this->redirect(["/site/index"]);
+
+            }
+            return $this->render('delete', [
+                'model' => $model,
+            ]);
+        }else{
+            $this->goHome();
+        }
+    }
+
     public function actionCreate()
     {
         if($this->verificarLogin()) {

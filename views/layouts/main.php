@@ -79,6 +79,9 @@ AppAsset::register($this);
                     ['label' => '<i class="glyphicon glyphicon-cog"></i> Alterar Dados', 'url' => ['/usuario/config'],'class'=>'modPass'],
                     ['label' => '<i class="glyphicon glyphicon-lock"></i> Alterar Senha', 'url' => ['/usuario/password']],
                     ['label' => '<i class="glyphicon glyphicon-envelope"></i> Alterar Email', 'url' => ['/usuario/mail']],
+                    ['label' => '',
+                        'options'=> ['class'=>'divider']],
+                    ['label' => '<i class="glyphicon glyphicon-trash"></i> Excluir Conta', 'url' => ['/usuario/delete']],
                 ]],
                 ' <li>'
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])

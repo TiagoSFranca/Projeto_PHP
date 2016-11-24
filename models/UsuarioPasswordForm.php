@@ -69,6 +69,23 @@ class UsuarioPasswordForm extends Model
     }
 
 
+
+    public function deletarUsuario(){
+        if($this->validate()) {
+            if($this->_user->usu_senha == md5($this->usu_senha)) {
+                $fotos = Foto::findByUser($this->_user->usu_id);
+                foreach ($fotos as $foto){
+                    Download::deleteAll(['foto_id'=>$foto->foto_id]);
+                    Visualizacao::deleteAll(['foto_id'=>$foto->foto_id]);
+                    $foto->delete();
+                }
+                $this->_user->delete();
+                return true;
+            }
+        }
+        return false;
+    }
+
     public function atualizarSenha(){
         if($this->validate()) {
             $this->_user->usu_senha = md5($this->usu_senha);
