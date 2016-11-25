@@ -87,8 +87,8 @@ $this->registerCss($script);
                         <div class="thumbnail">
                             <div class="caption">
                                 <div class='col-lg-12 text-primary'>
-                                    <span class="glyphicon glyphicon-picture"> <?= sizeof($user->fotos)?></span>
-                                    <span class="glyphicon glyphicon-download pull-right"> <?= sizeof($user->downloads)?></span>
+                                    <i class="glyphicon glyphicon-picture"> <?= sizeof($user->fotos)?></i>
+                                    <i class="glyphicon glyphicon-download pull-right"> <?= sizeof($user->downloads)?></i>
                                 </div>
                                 <div class='col-lg-12 well well-add-card'>
                                     <h4>
@@ -130,15 +130,22 @@ $this->registerCss($script);
                                         'params'=>['id' => $user->usu_id]
                                     ],
                                     ]
-                                )
+                                );
 
-
-                                ?>
-                                <?=
-                                Html::a(
+                                echo Html::a(
                                     'Excluir Usuário',
                                     ['usuario/delete', 'id' => $user->usu_id],
                                     ['class' => 'btn btn-danger btn-xs btn-update btn-add-card',
+                                        'data' => [
+                                            'confirm' => 'Deseja excluir esta foto?',
+                                            'method' => 'post',
+                                        ],
+                                    ]
+                                );
+                                echo Html::a(
+                                    '<i class="glyphicon glyphicon-list"></i> Relatório',
+                                    ['relatorio/usuario', 'id' => $user->usu_id],
+                                    ['class' => $class.' btn-xs btn-update btn-add-card',
                                         'data' => [
                                             'confirm' => 'Deseja excluir esta foto?',
                                             'method' => 'post',

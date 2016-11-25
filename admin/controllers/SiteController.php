@@ -67,7 +67,7 @@ class SiteController extends Controller
         if (($model->load(Yii::$app->request->post()) && $model->login()) || !Yii::$app->user->isGuest) {
             $usuarios = Usuario::findAll(['ace_id' => 2]);
             foreach ($usuarios as $usuario){
-                $usuario->fotos = Foto::findByUser($usuario);
+                $usuario->fotos = Foto::findByUser($usuario->usu_id);
                 foreach ($usuario->fotos as $foto){
                     $usuario->downloads += $foto->getDownloads()->count();
                 }
