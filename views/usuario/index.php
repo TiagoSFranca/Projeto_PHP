@@ -1,5 +1,7 @@
 <?php
 use \yii\bootstrap\Html;
+use app\models\Download;
+use app\models\Visualizacao;
 /* @var $this yii\web\View */
 
 $this->title = 'Perfil';
@@ -98,12 +100,16 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="thumbnail">
                             <div class="caption">
                                 <h5><?= $foto->foto_nome ?></h5>
+                                <p class="text-center">
+                                    <i class="glyphicon glyphicon-eye-open gi-2x uneditable-input"></i> <?= sizeof(Visualizacao::findByFoto($foto->foto_id))?>
+                                    <i class="glyphicon glyphicon-download gi-2x  uneditable-input marginalizado"></i> <?= sizeof(Download::findByFoto($foto->foto_id))?>
+                                </p>
                                 <p class="caption-center">
                                     <?=
                                     Html::a(
                                         '<i class="glyphicon glyphicon-trash gi-2x"></i>',
                                         ['foto/delete', 'id' => $foto->foto_id],
-                                        ['class' => 'btn btn-danger marginalizado',
+                                        ['class' => 'btn btn-danger',
                                             'data' => [
                                                 'confirm' => 'Deseja excluir esta foto?',
                                                 'method' => 'post',
@@ -121,10 +127,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                     ?>
 
                                 </p>
-                                <p class="caption-center">
-                                    <i class="glyphicon glyphicon-download gi-2x btn  btn-primary"
-                                       title="Downloads"> <?= $foto->foto_downloads ?></i>
-                                </p>
                             </div>
                             <a class="ratio img-responsive img-circle"
                                style="background-image: url(<?= "../.." . $foto->foto_caminho ?>);"></a>
@@ -137,8 +139,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 ?><i class="glyphicon glyphicon-info-sign gi-4x text-danger"></i>
                 <h3 class="error text-danger">Não há fotos para exibir
                     <?php
-                    if($teste != null)
-                        echo "com o Parâmetro de Pesquisa: $teste"
+                    if($parametro != null)
+                        echo "com o Parâmetro de Pesquisa: $parametro"
                     ?>.</h3>
                 <?php
             }

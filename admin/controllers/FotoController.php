@@ -71,13 +71,8 @@ class FotoController extends Controller
         $id = Yii::$app->getRequest()->post();
         if ($this->verificarLogin() && $id != null) {
             $model = Usuario::findOne(['usu_id'=>$id]);
-                $modelFoto = Foto::findAll(['usu_id'=>$id]);
+            $modelFoto = Foto::findAll(['usu_id'=>$id]);
 
-
-            foreach ($modelFoto as $foto) {
-                $foto->foto_downloads = Download::find()->where(['foto_id' => $foto->foto_id])->count();
-                $foto->foto_views = Visualizacao::find()->where(['foto_id' => $foto->foto_id])->count();
-            }
             return $this->render('list', [
                 'modelFoto' => $modelFoto,
                 'model'=>$model

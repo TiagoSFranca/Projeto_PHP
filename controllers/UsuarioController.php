@@ -74,19 +74,14 @@ class UsuarioController extends Controller
     public function actionIndex(){
         if ($this->verificarLogin()) {
             $model = Yii::$app->user;
-            $teste = Yii::$app->getRequest()->getQueryParam('q');
-            if ($teste != null) {
-                $modelFoto = Foto::findByLike($teste, $model->getId());
+            $parametro = Yii::$app->getRequest()->getQueryParam('q');
+            if ($parametro != null) {
+                $modelFoto = Foto::findByLike($parametro, $model->getId());
             } else {
                 $modelFoto = Foto::findByUser($model->getId());
             }
-
-            foreach ($modelFoto as $foto) {
-                $foto->foto_downloads = Download::find()->where(['foto_id' => $foto->foto_id])->count();
-                $foto->foto_views = Visualizacao::find()->where(['foto_id' => $foto->foto_id])->count();
-            }
             return $this->render('index', [
-                'model' => $model, 'modelFoto' => $modelFoto, 'teste' => $teste
+                'model' => $model, 'modelFoto' => $modelFoto, 'parametro' => $parametro
             ]);
         }else{
             $this->goHome();

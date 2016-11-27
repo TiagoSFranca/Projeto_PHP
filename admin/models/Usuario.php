@@ -23,8 +23,6 @@ use yii\web\IdentityInterface;
  */
 class Usuario extends ActiveRecord implements  IdentityInterface
 {
-    public $fotos;
-    public $downloads;
     /**
      * @inheritdoc
      */
@@ -57,15 +55,15 @@ class Usuario extends ActiveRecord implements  IdentityInterface
     public function attributeLabels()
     {
         return [
-            'usu_id' => 'Usu ID',
+            'usu_id' => 'ID',
             'usu_nome' => 'Nome',
-            'usu_login' => 'Usu Login',
-            'usu_senha' => 'Usu Senha',
-            'usu_email' => 'Usu Email',
-            'usu_data_nascimento' => 'Usu Data Nascimento',
-            'usu_sexo' => 'Usu Sexo',
+            'usu_login' => 'Login',
+            'usu_senha' => 'Senha',
+            'usu_email' => 'Email',
+            'usu_data_nascimento' => 'Data de Nascimento',
+            'usu_sexo' => 'Sexo',
             'ace_id' => 'Ace ID',
-            'usu_data_cadastro' => 'Usu Data Cadastro',
+            'usu_data_cadastro' => 'Data de Cadastro',
         ];
     }
 

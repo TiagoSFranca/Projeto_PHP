@@ -10,6 +10,7 @@ namespace app\models;
 
 
 use yii\base\Model;
+use yii\data\ActiveDataProvider;
 
 class RelatorioForm extends Model
 {
@@ -40,11 +41,10 @@ class RelatorioForm extends Model
      * 1 - DATA DE NASCIMENTO
      * 2- DATA DE CADASTRO
     */
-    public function listarTodosUsuarios($parametro){
+    public function listarTodosUsuarios($parametro,$tipoUsuario){
         if($this->validate()) {
-            $usuarios =  Usuario::find()->where(['ace_id'=>2]);
+            $usuarios =  Usuario::find()->where(['ace_id'=>$tipoUsuario]);
             if ($parametro == 1){
-                $usuarios =  Usuario::find()->where(['ace_id'=>2]);
                     $usuarios->andFilterCompare('usu_data_nascimento','<='.$this->usu_data_final);
                if($this->usu_data_inicial != 0) {
                    $usuarios->andFilterCompare('usu_data_nascimento', '>='.$this->usu_data_inicial);

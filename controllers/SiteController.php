@@ -74,10 +74,6 @@ class SiteController extends Controller
             $modelFoto = Foto::find()->limit(18)->all();
         }
 
-        foreach ($modelFoto as $foto){
-            $foto->foto_downloads = Download::find()->where(['foto_id'=>$foto->foto_id])->count();
-            $foto->foto_views = Visualizacao::find()->where(['foto_id'=>$foto->foto_id])->count();
-        }
         return $this->render('index', [
             'model' => $model,'modelFoto'=>$modelFoto,'parametro' =>$parametro
         ]);

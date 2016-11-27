@@ -1,5 +1,7 @@
 <?php
 use \yii\bootstrap\Html;
+use app\models\Download;
+use app\models\Visualizacao;
 /* @var $this yii\web\View */
 
 $this->title = 'Fotos';
@@ -41,7 +43,7 @@ $script = <<< CSS
     position:absolute;
     top:0;
     right:0;
-    background:rgba(211, 211, 211, 0.75);
+    background:rgba(13, 8, 19, 0.6);
     width:100%;
     height:100%;
     padding:2%;
@@ -98,6 +100,10 @@ $this->params['breadcrumbs'][] = $model->usu_nome;
                         <div class="thumbnail">
                             <div class="caption">
                                 <h5><?= $foto->foto_nome ?></h5>
+                                <p class="text-center">
+                                    <i class="glyphicon glyphicon-eye-open gi-2x uneditable-input"></i> <?= sizeof(Visualizacao::findByFoto($foto->foto_id))?>
+                                    <i class="glyphicon glyphicon-download gi-2x  uneditable-input marginalizado"></i> <?= sizeof(Download::findByFoto($foto->foto_id))?>
+                                </p>
                                 <p class="caption-center">
                                     <?=
                                     Html::a(
@@ -120,10 +126,6 @@ $this->params['breadcrumbs'][] = $model->usu_nome;
                                     )
                                     ?>
 
-                                </p>
-                                <p class="caption-center">
-                                    <i class="glyphicon glyphicon-download gi-2x btn  btn-primary"
-                                       title="Downloads"> <?= $foto->foto_downloads ?></i>
                                 </p>
                             </div>
                             <a class="ratio img-responsive img-circle"

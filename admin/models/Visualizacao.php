@@ -55,4 +55,13 @@ class Visualizacao extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Foto::className(), ['foto_id' => 'foto_id']);
     }
+    public static function findByFoto($foto){
+        $model = Visualizacao::find()->where(['foto_id'=>$foto])->all();
+        return $model;
+    }
+
+    public static function findByUser($usuario){
+        $model = Visualizacao::find()->innerJoin('foto')->where(['usu_id'=>$usuario])->all();
+        return $model;
+    }
 }

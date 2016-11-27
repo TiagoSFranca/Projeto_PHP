@@ -20,8 +20,6 @@ use Yii;
  */
 class Foto extends \yii\db\ActiveRecord
 {
-    public $foto_downloads;
-    public $foto_views;
     /**
      * @inheritdoc
      */

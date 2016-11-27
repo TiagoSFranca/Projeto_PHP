@@ -55,4 +55,10 @@ class Download extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Foto::className(), ['foto_id' => 'foto_id']);
     }
+
+
+    public static function findByFoto($foto){
+        $model = Download::find()->where(['foto_id'=>$foto])->all();
+        return $model;
+    }
 }

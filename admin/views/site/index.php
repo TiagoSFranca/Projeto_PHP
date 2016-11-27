@@ -3,6 +3,8 @@
 /* @var $this yii\web\View */
 
 use yii\bootstrap\Html;
+use app\models\Download;
+use app\models\Foto;
 
 $this->title = 'Início';
 $script = <<<CSS
@@ -87,8 +89,8 @@ $this->registerCss($script);
                         <div class="thumbnail">
                             <div class="caption">
                                 <div class='col-lg-12 text-primary'>
-                                    <i class="glyphicon glyphicon-picture"> <?= sizeof($user->fotos)?></i>
-                                    <i class="glyphicon glyphicon-download pull-right"> <?= sizeof($user->downloads)?></i>
+                                    <i class="glyphicon glyphicon-picture"> <?= sizeof(Foto::findByUser($user->usu_id))?></i>
+                                    <i class="glyphicon glyphicon-download pull-right"> <?= sizeof(Download::findByUser($user->usu_id))?></i>
                                 </div>
                                 <div class='col-lg-12 well well-add-card'>
                                     <h4>
