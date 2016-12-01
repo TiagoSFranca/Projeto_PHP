@@ -73,6 +73,10 @@ class SiteController extends Controller
         }else {
             $modelFoto = Foto::find()->limit(18)->all();
         }
+        foreach ($modelFoto as $foto) {
+            $foto->downloads = sizeof(Download::findByFoto($foto->foto_id));
+            $foto->visualizacoes = sizeof(Visualizacao::findByFoto($foto->foto_id));
+        }
 
         return $this->render('index', [
             'model' => $model,'modelFoto'=>$modelFoto,'parametro' =>$parametro

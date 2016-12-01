@@ -1,10 +1,9 @@
 <?php
 
 /* @var $this yii\web\View */
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
-use yii\bootstrap\Html;
-use app\models\Download;
-use app\models\Foto;
 
 $this->title = 'Início';
 $script = <<<CSS
@@ -62,18 +61,36 @@ p{
 {
     margin-left:15px;
 }
+.gi{
+    font-size: 1.1em;
+}
+.gi-4x{font-size: 4em;}
 CSS;
 
 $this->registerCss($script);
 
 ?>
 <div class="site-index">
-    <p class="alert-success" style="display: flex">
-        <?=
-        Yii::$app->session->getFlash('sucess');
-        ?>
-    </p>
     <div class="container" id="tourpackages-carousel">
+            <?php
+            $form = ActiveForm::begin([
+                'action' => ['site/index'],
+                'method' => 'get',
+            ]);
+            ?>
+        <div class="col-sm-5 col-md-5 col-lg-12">
+            <form class="navbar-form" role="search">
+                <div class="input-group col-sm-5 col-md-5 pull-right">
+                    <input type="text" class="form-control" placeholder="Pesquisar" name="q" >
+                    <div class="input-group-btn">
+                        <?= Html::submitButton('<i class="glyphicon glyphicon-search gi"></i>', ['class' => 'btn btn-primary']) ?>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+            <?php ActiveForm::end(); ?>
+
         <div class="row">
             <div class="col-lg-12">
                 <h4>
@@ -81,21 +98,29 @@ $this->registerCss($script);
                         Usuários
                     </strong>
                 </h4>
+                <p class="<?= $users==null?'alert-danger':'alert-success'?>" style="display: flex">
+                    <?php
+                    if($param!= null){
+                        echo 'Parâmetro de pesquisa: '.$param;
+                    }
+                    ?>
+                </p>
             </div>
             <?php
+            if(sizeof($users)>0) {
                 foreach ($users as $user) {
                     ?>
                     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                         <div class="thumbnail">
                             <div class="caption">
                                 <div class='col-lg-12 text-primary'>
-                                    <i class="glyphicon glyphicon-picture"> <?= sizeof(Foto::findByUser($user->usu_id))?></i>
-                                    <i class="glyphicon glyphicon-download pull-right"> <?= sizeof(Download::findByUser($user->usu_id))?></i>
+                                    <i class="glyphicon glyphicon-picture"> <?= $user->fotos ?></i>
+                                    <i class="glyphicon glyphicon-download pull-right"> <?= $user->downloads ?></i>
                                 </div>
                                 <div class='col-lg-12 well well-add-card'>
                                     <h4>
                                         <strong>
-                                            <?=$user->usu_nome ?>
+                                            <?= $user->usu_nome ?>
                                         </strong>
                                     </h4>
                                 </div>
@@ -121,16 +146,16 @@ $this->registerCss($script);
                                 </div>
 
                                 <?php
-                                sizeof($user->fotos)>0 ? $class = 'btn btn-primary':$class = 'hidden';
+                                $user->fotos > 0 ? $class = 'btn btn-primary' : $class = 'hidden';
 
                                 echo Html::a(
                                     'Ver Fotos',
                                     ['foto/list'],
-                                    ['class' => $class.' btn-xs btn-update btn-add-card',
-                                    'data' => [
-                                        'method' => 'post',
-                                        'params'=>['id' => $user->usu_id]
-                                    ],
+                                    ['class' => $class . ' btn-xs btn-update btn-add-card',
+                                        'data' => [
+                                            'method' => 'post',
+                                            'params' => ['id' => $user->usu_id]
+                                        ],
                                     ]
                                 );
 
@@ -146,10 +171,14 @@ $this->registerCss($script);
                                 );
                                 echo Html::a(
                                     '<i class="glyphicon glyphicon-list"></i> Relatório',
-                                    ['relatorio/usuario', 'id' => $user->usu_id],
-                                    ['class' => $class.' btn-xs btn-update btn-add-card',
+                                    ['relatorio/usuario'],
+                                    ['class' => $class . ' btn-xs btn-update btn-add-card',
                                         'data' => [
-                                            'confirm' => 'Deseja excluir esta foto?',
+                                            'params' => [
+                                                'id' => $user->usu_id,
+                                                'nome' => $user->usu_nome,
+                                                'login' => $user->usu_login,
+                                            ],
                                             'method' => 'post',
                                         ],
                                     ]
@@ -160,6 +189,15 @@ $this->registerCss($script);
                     </div>
                     <?php
                 }
+            }else{
+
+                ?>
+                <i class="glyphicon glyphicon-info-sign gi-4x text-danger"></i>
+                <h3 class="error text-danger">
+                    Não há fotos para exibir.
+                </h3>
+                <?php
+            }
             ?>
         </div><!-- End row -->
     </div><!-- End container -->

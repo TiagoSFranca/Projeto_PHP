@@ -43,11 +43,12 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
                     ['label' => '<i class="glyphicon glyphicon-home"></i> Inicio', 'url' => ['/site/index']],
+                    ['label' => '<i class="glyphicon glyphicon-picture"></i> Fotos', 'url' => ['/foto/index']],
                     ['label' => '<i class="glyphicon glyphicon-list"></i> Relatórios', 'items' => [
                         ['label' => '<i class="glyphicon glyphicon-user"></i> Usuários', 'url' => ['/relatorio/list-usuario']],
-                        ['label' => '<i class="glyphicon glyphicon-picture"></i> Fotos', 'url' => ['/relatorio/list-fotos']],
-                        ['label' => '<i class="glyphicon glyphicon-eye-open"></i> Visualizações', 'url' => ['/relatorio/list-views']],
-                        ['label' => '<i class="glyphicon glyphicon-download"></i> Downloads', 'url' => ['/relatorio/list-downloads']],
+                        ['label' => '<i class="glyphicon glyphicon-picture"></i> Fotos', 'url' => ['/relatorio/list-foto']],
+                        ['label' => '<i class="glyphicon glyphicon-eye-open"></i> Visualizações', 'url' => ['/relatorio/list-view']],
+                        ['label' => '<i class="glyphicon glyphicon-download"></i> Downloads', 'url' => ['/relatorio/list-download']],
                     ]],
                     ['label' => '<i class="glyphicon glyphicon-user"></i>  Perfil', 'items' => [
                         ['label' => '<i class="glyphicon glyphicon-cog"></i> Alterar Dados', 'url' => ['/usuario/config']],

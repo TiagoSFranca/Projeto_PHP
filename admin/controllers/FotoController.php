@@ -12,7 +12,6 @@ namespace app\controllers;
 use app\models\Download;
 use app\models\Foto;
 use app\models\Usuario;
-use app\models\UsuarioUpdateForm;
 use app\models\Visualizacao;
 use yii\web\Controller;
 use Yii;
@@ -69,13 +68,23 @@ class FotoController extends Controller
     public function actionList()
     {
         $id = Yii::$app->getRequest()->post();
-        if ($this->verificarLogin() && $id != null) {
+        if ($this->verificarLogin() && $id['id'] != null) {
+            isset($id['q'])?$parametro=$id['q']:$parametro=null;
             $model = Usuario::findOne(['usu_id'=>$id]);
-            $modelFoto = Foto::findAll(['usu_id'=>$id]);
+            if($parametro!= null){
+                $modelFoto = Foto::findByLike($parametro,$model->usu_id);
+            }else{
+                $modelFoto = Foto::findAll(['usu_id'=>$id]);
+            }
+            foreach ($modelFoto as $foto) {
+                $foto->downloads = sizeof(Download::findByFoto($foto->foto_id));
+                $foto->visualizacoes = sizeof(Visualizacao::findByFoto($foto->foto_id));
+            }
 
             return $this->render('list', [
                 'modelFoto' => $modelFoto,
-                'model'=>$model
+                'model'=>$model,
+                'param'=>$parametro
             ]);
         }else{
             $this->goHome();
@@ -90,31 +99,30 @@ class FotoController extends Controller
 
     }
 
-    private function redirecionar(){
-        /*$foto->foto_downloads += 1;
-        $foto->save();
-        Yii::$app->getSession()->setFlash('sucess', 'Download realizado Com Sucesso.');*/
-        return $this->redirect(["/site/index"]);
-    }
 
-    public function actionDownload($id){
-    $path = Yii::getAlias('@app');
-    $foto  = $this->findModel($id);
-    $file = $path .$foto->foto_caminho;
+    public function actionIndex()
+    {
+        if($this->verificarLogin()) {
+            $model = Yii::$app->user;
+            $parametro = Yii::$app->getRequest()->getQueryParam('q');
 
-    if (file_exists($file)) {
-        //ini_set('max_execution_time', 5*60);
-        //Yii::$app->response->SendFile($file)->send();
-        Yii::$app->response->sendFile($file)->on(\yii\web\Response::EVENT_AFTER_SEND, function($event) {
-            /*$foto->foto_downloads += 1;
-            $foto->save();*/
-            Yii::$app->getSession()->setFlash('sucess', 'Download realizado Com Sucesso.');
-            $this->redirecionar();
-    }, $file);
-            $download = new Download();
-            $download->foto_id = $foto->foto_id;
-            $download->down_data = date('y-m-d');
-            $download->save();
+            if ($parametro != null) {
+                $modelFoto = Foto::findByLike($parametro);
+            } else {
+                $modelFoto = Foto::find()->limit(18)->all();
+            }
+            foreach ($modelFoto as $foto) {
+                $foto->downloads = sizeof(Download::findByFoto($foto->foto_id));
+                $foto->visualizacoes = sizeof(Visualizacao::findByFoto($foto->foto_id));
+            }
+
+            return $this->render('index', [
+                'model' => $model,
+                'modelFoto' => $modelFoto,
+                'param' => $parametro
+            ]);
+        }else{
+            $this->goHome();
         }
     }
 

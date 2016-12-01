@@ -101,8 +101,8 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="caption">
                                 <h5><?= $foto->foto_nome ?></h5>
                                 <p class="text-center">
-                                    <i class="glyphicon glyphicon-eye-open gi-2x uneditable-input"></i> <?= sizeof(Visualizacao::findByFoto($foto->foto_id))?>
-                                    <i class="glyphicon glyphicon-download gi-2x  uneditable-input marginalizado"></i> <?= sizeof(Download::findByFoto($foto->foto_id))?>
+                                    <i class="glyphicon glyphicon-eye-open gi-2x uneditable-input top-left"></i> <?= $foto->visualizacoes?>
+                                    <i class="glyphicon glyphicon-download gi-2x  uneditable-input"></i> <?= $foto->downloads?>
                                 </p>
                                 <p class="caption-center">
                                     <?=

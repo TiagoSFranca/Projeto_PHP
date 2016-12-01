@@ -15,6 +15,8 @@ use Yii;
  */
 class Visualizacao extends \yii\db\ActiveRecord
 {
+
+    public $quantidade;
     /**
      * @inheritdoc
      */
@@ -43,7 +45,7 @@ class Visualizacao extends \yii\db\ActiveRecord
     {
         return [
             'visu_id' => 'Visu ID',
-            'visu_data' => 'Visu Data',
+            'visu_data' => 'Data de Visualização',
             'foto_id' => 'Foto ID',
         ];
     }
@@ -57,6 +59,11 @@ class Visualizacao extends \yii\db\ActiveRecord
     }
     public static function findByFoto($foto){
         $model = Visualizacao::find()->where(['foto_id'=>$foto])->all();
+        return $model;
+    }
+
+    public static function findByFotoWithGroup($foto){
+        $model = Visualizacao::find()->select(['visu_data,COUNT(*) AS quantidade'])->where(['foto_id'=>$foto])->groupBy(['visu_data'])->all();
         return $model;
     }
 

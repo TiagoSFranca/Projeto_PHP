@@ -1,7 +1,6 @@
 <?php
 use \yii\bootstrap\Html;
-use app\models\Download;
-use app\models\Visualizacao;
+use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 
 $this->title = 'Fotos';
@@ -83,17 +82,47 @@ $js = "$(document).ready(function() {
 
 $this->registerCss($script);
 $this->registerJs($js);
-$this->params['breadcrumbs'][] = $model->usu_nome;
 ?>
-<div class="usuario-index">
-    <p class="alert-success">
-        <?=
-            Yii::$app->session->getFlash('sucess');
+<div class="site-index">
+    <div class="container" >
+        <?php
+        $form = ActiveForm::begin([
+            'action' => ['foto/list'],
+            'method' => 'post',
+        ]);
         ?>
-    </p>
-    <div class="container">
+        <div class="col-sm-5 col-md-5 col-lg-12">
+            <form class="navbar-form" role="search">
+                <div class="input-group col-sm-5 col-md-5 pull-right">
+                    <input type="text" class="form-control" placeholder="Pesquisar" name="q" >
+                    <input type="hidden" name="id" value="<?=$model->usu_id?>">
+                    <div class="input-group-btn">
+                        <?= Html::submitButton('<i class="glyphicon glyphicon-search gi"></i>', ['class' => 'btn btn-primary']) ?>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <?php ActiveForm::end(); ?>
         <div class="row">
+            <div class="col-lg-12">
+                <h4>
+                    <strong>
+                        <?php
+                        echo $model->usu_nome;
+                        ?>
+                    </strong>
+                </h4>
+                <p class="<?= $modelFoto==null?'alert-danger':'alert-success'?>" style="display: flex">
+                    <?php
+                    if($param!= null){
+                        echo 'Parâmetro de pesquisa: '.$param;
+                    }
+                    ?>
+                </p>
+            </div>
             <?php
+            if(sizeof($modelFoto)>0) {
                 foreach ($modelFoto as $foto) {
                     ?>
                     <div class="col-sm-2">
@@ -101,8 +130,8 @@ $this->params['breadcrumbs'][] = $model->usu_nome;
                             <div class="caption">
                                 <h5><?= $foto->foto_nome ?></h5>
                                 <p class="text-center">
-                                    <i class="glyphicon glyphicon-eye-open gi-2x uneditable-input"></i> <?= sizeof(Visualizacao::findByFoto($foto->foto_id))?>
-                                    <i class="glyphicon glyphicon-download gi-2x  uneditable-input marginalizado"></i> <?= sizeof(Download::findByFoto($foto->foto_id))?>
+                                    <i class="glyphicon glyphicon-eye-open gi-2x uneditable-input"></i> <?= $foto->visualizacoes ?>
+                                    <i class="glyphicon glyphicon-download gi-2x  uneditable-input marginalizado"></i> <?= $foto->downloads ?>
                                 </p>
                                 <p class="caption-center">
                                     <?=
@@ -120,10 +149,17 @@ $this->params['breadcrumbs'][] = $model->usu_nome;
 
                                     <?=
                                     Html::a(
-                                        '<i class="glyphicon glyphicon-pencil gi-2x"></i>',
-                                        ['foto/update', 'id' => $foto->foto_id],
-                                        ['class' => 'btn btn-primary  marginalizado']
-                                    )
+                                        '<i class="glyphicon glyphicon-list gi-2x"></i>',
+                                        ['relatorio/save-single-foto'],
+                                        ['class' => 'btn btn-primary  marginalizado',
+                                            'data' => [
+                                                'params' => [
+                                                    'foto' => $foto->foto_id
+                                                ],
+                                                'method' => 'post'
+                                            ]
+                                        ]
+                                    );
                                     ?>
 
                                 </p>
@@ -134,7 +170,16 @@ $this->params['breadcrumbs'][] = $model->usu_nome;
                     </div>
                     <?php
                 }
+            }else{
+
                 ?>
+                <i class="glyphicon glyphicon-info-sign gi-4x text-danger"></i>
+                <h3 class="error text-danger">
+                    Não há fotos para exibir.
+                </h3>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </div>

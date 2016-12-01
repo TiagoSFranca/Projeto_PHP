@@ -2,7 +2,6 @@
 
 namespace app\models;
 
-use Yii;
 
 /**
  * This is the model class for table "download".
@@ -15,6 +14,8 @@ use Yii;
  */
 class Download extends \yii\db\ActiveRecord
 {
+
+    public $quantidade;
     /**
      * @inheritdoc
      */
@@ -44,7 +45,7 @@ class Download extends \yii\db\ActiveRecord
         return [
             'down_id' => 'Down ID',
             'foto_id' => 'Foto ID',
-            'down_data' => 'Down Data',
+            'down_data' => 'Data de Download',
         ];
     }
 
@@ -56,13 +57,22 @@ class Download extends \yii\db\ActiveRecord
         return $this->hasOne(Foto::className(), ['foto_id' => 'foto_id']);
     }
 
-    public static function findByUser($usuario){
-        $model = Download::find()->innerJoin('foto')->where(['usu_id'=>$usuario])->all();
-        return $model;
-    }
 
     public static function findByFoto($foto){
         $model = Download::find()->where(['foto_id'=>$foto])->all();
+        return $model;
+    }
+
+
+
+
+    public static function findByFotoWithGroup($foto){
+        $model = Download::find()->select(['down_data,COUNT(*) AS quantidade'])->where(['foto_id'=>$foto])->groupBy(['down_data'])->all();
+        return $model;
+    }
+
+    public static function findByUser($usuario){
+        $model = Download::find()->innerJoin('foto')->where(['usu_id'=>$usuario])->all();
         return $model;
     }
 }

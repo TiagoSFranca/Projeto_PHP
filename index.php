@@ -6,3 +6,5 @@
  * Time: 11:22
  */
 header("Location:web/");
+
+?>

@@ -367,8 +367,6 @@ abstract class Application extends Module
     public function run()
     {
         try {
-            if(!Yii::$app->user->isGuest && Yii::$app->user->identity->ace_id != 1)
-                Yii::$app->user->logout();
 
             $this->state = self::STATE_BEFORE_REQUEST;
             $this->trigger(self::EVENT_BEFORE_REQUEST);

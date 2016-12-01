@@ -10,20 +10,19 @@ namespace app\models;
 
 
 use yii\base\Model;
-use yii\data\ActiveDataProvider;
 
 class RelatorioForm extends Model
 {
 
-    public $usu_data_inicial;
-    public $usu_data_final;
+    public $data_inicial;
+    public $data_final;
 
     public function rules()
     {
         return [
-            [['usu_data_final'], 'required'],
-            [['usu_data_inicial', 'usu_data_final'], 'safe'],
-            ['usu_data_final', 'compare', 'compareAttribute'=>'usu_data_inicial','message'=>'Data Final não deve ser menor que a inicial', 'operator'=>'>'],
+            [['data_final'], 'required'],
+            [['data_inicial', 'data_final'], 'safe'],
+            ['data_final', 'compare', 'compareAttribute'=>'data_inicial','message'=>'Data Final não deve ser menor que a inicial', 'operator'=>'>'],
 
         ];
     }
@@ -31,8 +30,8 @@ class RelatorioForm extends Model
     public function attributeLabels()
     {
         return [
-            'usu_data_inicial' => 'Data Inicial',
-            'usu_data_final' => 'Data Final',
+            'data_inicial' => 'Data Inicial',
+            'data_final' => 'Data Final',
         ];
     }
 
@@ -41,23 +40,84 @@ class RelatorioForm extends Model
      * 1 - DATA DE NASCIMENTO
      * 2- DATA DE CADASTRO
     */
-    public function listarTodosUsuarios($parametro,$tipoUsuario){
+    public function listarTodosUsuarios($parametro,$tipoUsuario,$filtro,$ordenacao){
         if($this->validate()) {
-            $usuarios =  Usuario::find()->where(['ace_id'=>$tipoUsuario]);
-            if ($parametro == 1){
-                    $usuarios->andFilterCompare('usu_data_nascimento','<='.$this->usu_data_final);
-               if($this->usu_data_inicial != 0) {
-                   $usuarios->andFilterCompare('usu_data_nascimento', '>='.$this->usu_data_inicial);
+            $query =  Usuario::find()->where(['ace_id'=>$tipoUsuario]);
+                    $query->andFilterCompare($parametro,'<='.$this->data_final);
+               if($this->data_inicial != 0) {
+                   $query->andFilterCompare($parametro, '>='.$this->data_inicial);
                 }
-            }else{
-                   $usuarios->andFilterCompare('usu_data_cadastro','<='.$this->usu_data_final);
-                if($this->usu_data_inicial != 0) {
-                    $usuarios->andFilterCompare('usu_data_cadastro', '>='.$this->usu_data_inicial);
-                }
+            $usuarios = $query->orderBy($filtro.' '.$ordenacao)->all();
+            foreach ($usuarios as $usuario) {
+                $usuario->downloads = sizeof(Download::findByUser($usuario->usu_id));
+                $usuario->fotos = sizeof(Foto::findByUser($usuario->usu_id));
+                $usuario->visualizacoes = sizeof(Visualizacao::findByUser($usuario->usu_id));
             }
-            return $usuarios->all();
+            return $usuarios;
         }
         return false;
     }
 
+    public function listarTodasFotos($ordenacao,$filtro){
+        if($this->validate()) {
+            $query = Foto::find()->andFilterCompare('foto_data_upload', '<=' . $this->data_final);
+            if ($this->data_inicial != 0) {
+                $query->andFilterCompare('foto_data_upload', '>=' . $this->data_inicial);
+            }
+
+            $fotos = $query->orderBy($filtro.' '.$ordenacao)->all();
+            foreach ($fotos as $foto) {
+                $foto->downloads = sizeof(Download::findByFoto($foto->foto_id));
+                $foto->visualizacoes = sizeof(Visualizacao::findByFoto($foto->foto_id));
+                $foto->usu_login = Usuario::findIdentity($foto->usu_id)->usu_login;
+            }
+            return $fotos;
+        }
+        return false;
+    }
+
+    public function listarTodasViews($ordenacao,$filtro){
+        if($this->validate()) {
+            $query = Visualizacao::find()->select(['visu_data,COUNT(*) AS quantidade'])->andFilterCompare('visu_data', '<=' . $this->data_final);
+            if ($this->data_inicial != 0) {
+                $query->andFilterCompare('visu_data', '>=' . $this->data_inicial);
+            }
+
+            $views = $query->groupBy('visu_data')->orderBy($filtro.' '.$ordenacao)->all();
+            return $views;
+        }
+        return false;
+    }
+
+    public function listarTodosDownloads($ordenacao,$filtro){
+        if($this->validate()) {
+            $query = Download::find()->select(['down_data,COUNT(*) AS quantidade'])->andFilterCompare('down_data', '<=' . $this->data_final);
+            if ($this->data_inicial != 0) {
+                $query->andFilterCompare('down_data', '>=' . $this->data_inicial);
+            }
+
+            $downs = $query->groupBy('down_data')->orderBy($filtro.' '.$ordenacao)->all();
+            return $downs;
+        }
+        return false;
+    }
+
+
+
+    public function listarFotosUsuarios($id){
+        $fotos = Foto::findByUser($id);
+        foreach ($fotos as $foto) {
+            $foto->downloads = sizeof(Download::findByFoto($foto->foto_id));
+            $foto->visualizacoes = sizeof(Visualizacao::findByFoto($foto->foto_id));
+        }
+        return $fotos;
+    }
+
+    public static function getFoto($id_foto){
+        $foto = Foto::findOne(['foto_id'=>$id_foto]);
+        $foto->downloads = Download::findByFotoWithGroup($id_foto);
+        $foto->visualizacoes = Visualizacao::findByFotoWithGroup($id_foto);
+        $foto->usu_login = Usuario::findOne(['usu_id'=>$foto->usu_id]);
+        return $foto;
+    }
 }

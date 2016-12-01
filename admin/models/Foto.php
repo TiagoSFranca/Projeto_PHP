@@ -2,7 +2,6 @@
 
 namespace app\models;
 
-use Yii;
 
 /**
  * This is the model class for table "foto".
@@ -20,6 +19,9 @@ use Yii;
  */
 class Foto extends \yii\db\ActiveRecord
 {
+    public $visualizacoes;
+    public $downloads;
+    public $usu_login;
     /**
      * @inheritdoc
      */
@@ -50,12 +52,15 @@ class Foto extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'foto_id' => 'Foto ID',
+            'foto_id' => 'ID',
             'foto_nome' => 'Nome',
             'usu_id' => 'Usu ID',
             'foto_caminho' => 'Caminho',
             'foto_tag' => 'Tag',
-            'foto_data_upload' => 'Foto Data Up',
+            'foto_data_upload' => 'Data Upload',
+            'downloads'=>'Downloads',
+            'visualizacoes'=>'Visualizações',
+            'usu_login' => 'Usuário'
         ];
     }
 

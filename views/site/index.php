@@ -103,8 +103,8 @@ $this->registerJs($js);
                             <h5 class="text-center"><?= $foto->foto_nome?></h5>
                             <br>
                             <p class="text-center">
-                                <i class="glyphicon glyphicon-eye-open gi-2x uneditable-input top-left"></i> <?= sizeof(Visualizacao::findByFoto($foto->foto_id))?>
-                                <i class="glyphicon glyphicon-download gi-2x  uneditable-input"></i> <?= sizeof(Download::findByFoto($foto->foto_id))?>
+                                <i class="glyphicon glyphicon-eye-open gi-2x uneditable-input top-left"></i> <?= $foto->visualizacoes?>
+                                <i class="glyphicon glyphicon-download gi-2x  uneditable-input"></i> <?= $foto->downloads?>
                             </p>
                             <p  class="text-center">
                                 <?=

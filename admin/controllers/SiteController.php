@@ -2,9 +2,11 @@
 
 namespace app\controllers;
 
+use app\models\Download;
 use app\models\Foto;
 use app\models\LoginAdminForm;
 use app\models\Usuario;
+use app\models\Visualizacao;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -65,8 +67,22 @@ class SiteController extends Controller
         $model = new LoginAdminForm();
 
         if (($model->load(Yii::$app->request->post()) && $model->login()) || !Yii::$app->user->isGuest) {
-            $usuarios = Usuario::findAll(['ace_id' => 2]);
-            return $this->render('index',['users'=>$usuarios]);
+            $parametro = Yii::$app->getRequest()->getQueryParam('q');
+
+            if($parametro != null){
+                $usuarios = Usuario::findByLike($parametro);
+            }else {
+                $usuarios = Usuario::findAll(['ace_id' => 2]);
+            }
+                foreach ($usuarios as $usuario) {
+                    $usuario->downloads = sizeof(Download::findByUser($usuario->usu_id));
+                    $usuario->fotos = sizeof(Foto::findByUser($usuario->usu_id));
+                    $usuario->visualizacoes = sizeof(Visualizacao::findByUser($usuario->usu_id));
+                }
+            return $this->render('index',[
+                'users'=>$usuarios,
+                'param'=>$parametro
+            ]);
         }
         else{
             return $this->render('login', ['model' => $model]);

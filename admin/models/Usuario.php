@@ -23,6 +23,10 @@ use yii\web\IdentityInterface;
  */
 class Usuario extends ActiveRecord implements  IdentityInterface
 {
+
+    public $downloads;
+    public $fotos;
+    public $visualizacoes;
     /**
      * @inheritdoc
      */
@@ -64,6 +68,9 @@ class Usuario extends ActiveRecord implements  IdentityInterface
             'usu_sexo' => 'Sexo',
             'ace_id' => 'Ace ID',
             'usu_data_cadastro' => 'Data de Cadastro',
+            'downloads'=>'Downloads',
+            'fotos'=>'Fotos',
+            'visualizacoes'=>'Visualizações'
         ];
     }
 
@@ -157,4 +164,9 @@ class Usuario extends ActiveRecord implements  IdentityInterface
         return $this->usu_senha === md5($senha);
     }
 
+    public static function findByLike($param){
+        $query = Usuario::findBySql("SELECT * FROM USUARIO WHERE ace_id = 2 AND (usu_login like '%$param%' OR usu_nome like '%$param%' OR usu_email like '%$param%')")->all();
+        return $query;
+
+    }
 }
