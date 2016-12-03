@@ -69,8 +69,6 @@ class UsuarioController extends Controller
         ]);
     }
 
-
-
     public function actionIndex(){
         if ($this->verificarLogin()) {
             $model = Yii::$app->user;
@@ -101,7 +99,7 @@ class UsuarioController extends Controller
             $model->usu_data_nascimento = $user->usu_data_nascimento;
             $model->usu_sexo = $user->usu_sexo;
             $model->_user = $user;
-            if ($model->load(Yii::$app->request->post()) && $model->atualizarUsuario()) {
+            if ($model->load(Yii::$app->request->post()) && $model->updateUser()) {
                 Yii::$app->getSession()->setFlash('sucess', 'Cadastro realizado Com Sucesso.');
                 return $this->redirect(["/usuario/index"]);
             } else {
@@ -113,10 +111,11 @@ class UsuarioController extends Controller
             $this->goHome();
         }
     }
+
     public function actionCreate()
     {
         $model = new UsuarioForm();
-        if ($model->load(Yii::$app->request->post()) && $model->criarUsuario()) {
+        if ($model->load(Yii::$app->request->post()) && $model->createUser()) {
             Yii::$app->getSession()->setFlash('sucess', 'Cadastro realizado Com Sucesso.');
             return $this->redirect(["/usuario/login"]);
         }else {
@@ -131,7 +130,7 @@ class UsuarioController extends Controller
         if($this->verificarLogin()) {
             $model = new UsuarioPasswordForm();
             $model->usu_id = Yii::$app->user->identity->getId();
-            if ($model->load(Yii::$app->request->post()) && $model->atualizarSenha()) {
+            if ($model->load(Yii::$app->request->post()) && $model->updatePassword()) {
                 Yii::$app->getSession()->setFlash('sucess', 'Senha Alterada Com Sucesso.');
                 return $this->redirect(["/usuario/index"]);
             } else {
@@ -144,12 +143,11 @@ class UsuarioController extends Controller
         }
     }
 
-
     public function actionDelete(){
         if($this->verificarLogin()) {
             $model = new UsuarioDeleteForm();
             $model->usu_id = Yii::$app->user->identity->getId();
-            if ($model->load(Yii::$app->request->post()) && $model->deletarUsuario()) {
+            if ($model->load(Yii::$app->request->post()) && $model->deleteUser()) {
                     Yii::$app->getSession()->setFlash('sucess', 'Usuario Deletado.');
                     return $this->redirect(["/site/index"]);
 
@@ -161,12 +159,13 @@ class UsuarioController extends Controller
             $this->goHome();
         }
     }
+
     public function actionMail(){
         if($this->verificarLogin()) {
             $user = $this->findModel(Yii::$app->user->identity->usu_login);
             $model = new UsuarioMailForm();
             $model->_user = $user;
-            if ($model->load(Yii::$app->request->post()) && $model->atualizarEmail()) {
+            if ($model->load(Yii::$app->request->post()) && $model->updateEmail()) {
                 Yii::$app->getSession()->setFlash('sucess', 'Senha Alterada Com Sucesso.');
                 return $this->redirect(["/usuario/index"]);
             } else {
@@ -178,6 +177,7 @@ class UsuarioController extends Controller
             $this->goHome();
         }
     }
+
     protected function findModel($usuario)
     {
         if (($model = Usuario::findByUsername($usuario)) !== null) {

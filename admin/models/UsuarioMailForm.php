@@ -49,7 +49,7 @@ class UsuarioMailForm extends Model
     }
 
 
-    public function atualizarEmail(){
+    public function updateEmail(){
         if($this->validate()) {
             $this->_user->usu_email = $this->usu_email;
             $this->_user->save();

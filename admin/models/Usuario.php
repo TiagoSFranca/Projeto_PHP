@@ -74,21 +74,6 @@ class Usuario extends ActiveRecord implements  IdentityInterface
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getFotos()
-    {
-        return $this->hasMany(Foto::className(), ['usu_id' => 'usu_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getAce()
-    {
-        return $this->hasOne(Acesso::className(), ['ace_id' => 'ace_id']);
-    }
 
     /**
      * Finds an identity by the given ID.

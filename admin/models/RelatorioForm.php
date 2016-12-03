@@ -40,14 +40,14 @@ class RelatorioForm extends Model
      * 1 - DATA DE NASCIMENTO
      * 2- DATA DE CADASTRO
     */
-    public function listarTodosUsuarios($parametro,$tipoUsuario,$filtro,$ordenacao){
+    public function listAllUsers($param,$typeUser,$filter,$sort){
         if($this->validate()) {
-            $query =  Usuario::find()->where(['ace_id'=>$tipoUsuario]);
-                    $query->andFilterCompare($parametro,'<='.$this->data_final);
+            $query =  Usuario::find()->where(['ace_id'=>$typeUser]);
+                    $query->andFilterCompare($param,'<='.$this->data_final);
                if($this->data_inicial != 0) {
-                   $query->andFilterCompare($parametro, '>='.$this->data_inicial);
+                   $query->andFilterCompare($param, '>='.$this->data_inicial);
                 }
-            $usuarios = $query->orderBy($filtro.' '.$ordenacao)->all();
+            $usuarios = $query->orderBy($filter.' '.$sort)->all();
             foreach ($usuarios as $usuario) {
                 $usuario->downloads = sizeof(Download::findByUser($usuario->usu_id));
                 $usuario->fotos = sizeof(Foto::findByUser($usuario->usu_id));
@@ -58,14 +58,14 @@ class RelatorioForm extends Model
         return false;
     }
 
-    public function listarTodasFotos($ordenacao,$filtro){
+    public function listAllPictures($sort,$filter){
         if($this->validate()) {
             $query = Foto::find()->andFilterCompare('foto_data_upload', '<=' . $this->data_final);
             if ($this->data_inicial != 0) {
                 $query->andFilterCompare('foto_data_upload', '>=' . $this->data_inicial);
             }
 
-            $fotos = $query->orderBy($filtro.' '.$ordenacao)->all();
+            $fotos = $query->orderBy($filter.' '.$sort)->all();
             foreach ($fotos as $foto) {
                 $foto->downloads = sizeof(Download::findByFoto($foto->foto_id));
                 $foto->visualizacoes = sizeof(Visualizacao::findByFoto($foto->foto_id));
@@ -76,27 +76,27 @@ class RelatorioForm extends Model
         return false;
     }
 
-    public function listarTodasViews($ordenacao,$filtro){
+    public function listAllViews($sort,$filter){
         if($this->validate()) {
             $query = Visualizacao::find()->select(['visu_data,COUNT(*) AS quantidade'])->andFilterCompare('visu_data', '<=' . $this->data_final);
             if ($this->data_inicial != 0) {
                 $query->andFilterCompare('visu_data', '>=' . $this->data_inicial);
             }
 
-            $views = $query->groupBy('visu_data')->orderBy($filtro.' '.$ordenacao)->all();
+            $views = $query->groupBy('visu_data')->orderBy($filter.' '.$sort)->all();
             return $views;
         }
         return false;
     }
 
-    public function listarTodosDownloads($ordenacao,$filtro){
+    public function listAllDownloads($sort,$filter){
         if($this->validate()) {
             $query = Download::find()->select(['down_data,COUNT(*) AS quantidade'])->andFilterCompare('down_data', '<=' . $this->data_final);
             if ($this->data_inicial != 0) {
                 $query->andFilterCompare('down_data', '>=' . $this->data_inicial);
             }
 
-            $downs = $query->groupBy('down_data')->orderBy($filtro.' '.$ordenacao)->all();
+            $downs = $query->groupBy('down_data')->orderBy($filter.' '.$sort)->all();
             return $downs;
         }
         return false;
@@ -104,8 +104,8 @@ class RelatorioForm extends Model
 
 
 
-    public function listarFotosUsuarios($id){
-        $fotos = Foto::findByUser($id);
+    public function listAllPicturesOfUser($id_user){
+        $fotos = Foto::findByUser($id_user);
         foreach ($fotos as $foto) {
             $foto->downloads = sizeof(Download::findByFoto($foto->foto_id));
             $foto->visualizacoes = sizeof(Visualizacao::findByFoto($foto->foto_id));
@@ -113,10 +113,10 @@ class RelatorioForm extends Model
         return $fotos;
     }
 
-    public static function getFoto($id_foto){
-        $foto = Foto::findOne(['foto_id'=>$id_foto]);
-        $foto->downloads = Download::findByFotoWithGroup($id_foto);
-        $foto->visualizacoes = Visualizacao::findByFotoWithGroup($id_foto);
+    public static function getPicture($id_picture){
+        $foto = Foto::findOne(['foto_id'=>$id_picture]);
+        $foto->downloads = Download::findByFotoWithGroup($id_picture);
+        $foto->visualizacoes = Visualizacao::findByFotoWithGroup($id_picture);
         $foto->usu_login = Usuario::findOne(['usu_id'=>$foto->usu_id]);
         return $foto;
     }

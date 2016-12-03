@@ -28,7 +28,7 @@ class UsuarioPasswordForm extends Model
             [['usu_senha','usu_confirm_senha','senha_atual'], 'string', 'max' => 20, 'min' => 8],
             ['usu_confirm_senha', 'compare', 'compareAttribute'=>'usu_senha','message'=>'Senhas Diferentes'],
             ['usu_senha', 'compare', 'compareAttribute'=>'senha_atual','message'=>'Nova Senha não pode ser igual à Antiga', 'operator'=>'!='],
-            ['usu_senha','validateSenha'],
+            ['usu_senha','validateEmptyPassword'],
             ['senha_atual', 'validatePassword'],
             [ 'usu_senha', 'match', 'not' => true, 'pattern' => '/[^0-9!@#$%+.&*a-zA-Z_-]/',
                 'message' => 'Apenas [ 0-9 ,a-z , A-Z , _ , - , ! , @ , # , $ , % , + , . , & , *]']
@@ -47,7 +47,7 @@ class UsuarioPasswordForm extends Model
         }
     }
 
-    public function validateSenha($attribute, $params)
+    public function validateEmptyPassword($attribute, $params)
     {
         if (!$this->hasErrors()) {
             if(substr_count($this->usu_senha,' ') >=1){
@@ -69,7 +69,7 @@ class UsuarioPasswordForm extends Model
     }
 
 
-    public function atualizarSenha(){
+    public function updatePassword(){
         if($this->validate()) {
             $this->_user->usu_senha = md5($this->usu_senha);
             $this->_user->save();

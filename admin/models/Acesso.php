@@ -43,12 +43,4 @@ class Acesso extends \yii\db\ActiveRecord
             'ace_descricao' => 'Ace Descricao',
         ];
     }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUsuarios()
-    {
-        return $this->hasMany(Usuario::className(), ['ace_id' => 'ace_id']);
-    }
 }

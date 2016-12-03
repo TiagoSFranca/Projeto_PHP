@@ -40,7 +40,7 @@ class UsuarioForm extends Model
             [['usu_email'], 'string', 'max' => 50],
             [['usu_sexo'], 'string', 'max' => 1],
             ['usu_login','validateLogin'],
-            ['usu_senha','validateSenha'],
+            ['usu_senha','validatePassword'],
             ['usu_email','validateEmail'],
             [ 'usu_login', 'match', 'not' => true, 'pattern' => '/[^0-9!@#$%+.&*a-zA-Z_-]/',
                 'message' => 'Apenas [ 0-9 ,a-z , A-Z , _ , - , ! , @ , # , $ , % , + , . , & , *]'],
@@ -60,7 +60,7 @@ class UsuarioForm extends Model
             }
         }
     }
-    public function validateSenha($attribute, $params)
+    public function validatePassword($attribute, $params)
     {
         if (!$this->hasErrors()) {
             if(substr_count($this->usu_senha,' ') >=1){
@@ -106,7 +106,7 @@ class UsuarioForm extends Model
      * 3 -
      * */
 
-    public function criarUsuario(){
+    public function createUser(){
             if($this->validate()) {
                 $this->ace_id = 2;
                 $usu = new Usuario();
@@ -124,7 +124,7 @@ class UsuarioForm extends Model
             return false;
     }
 
-    public function atualizarUsuario(){
+    public function updateUser(){
             $this->_user->usu_nome = $this->usu_nome;
             $this->_user->usu_data_nascimento = $this->usu_data_nascimento;
             $this->_user->usu_sexo = $this->usu_sexo;

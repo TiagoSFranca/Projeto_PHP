@@ -22,7 +22,6 @@ class FotoForm extends Model
     public $foto_caminho;
     public $foto_nome;
     public $usu_id;
-    public $foto_downloads;
     public $foto_tag;
     /**
      * @inheritdoc
@@ -34,7 +33,6 @@ class FotoForm extends Model
             [['usu_id'], 'integer'],
             [['foto_nome'], 'string', 'max' => 32],
             [['foto_caminho'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
-            [['foto_downloads'], 'number'],
             [['foto_tag'], 'string', 'max' => 20, 'min' => 3]
 
         ];

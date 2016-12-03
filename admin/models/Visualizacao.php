@@ -16,7 +16,6 @@ use Yii;
 class Visualizacao extends \yii\db\ActiveRecord
 {
 
-    public $quantidade;
     /**
      * @inheritdoc
      */
@@ -50,25 +49,18 @@ class Visualizacao extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getFoto()
-    {
-        return $this->hasOne(Foto::className(), ['foto_id' => 'foto_id']);
-    }
-    public static function findByFoto($foto){
-        $model = Visualizacao::find()->where(['foto_id'=>$foto])->all();
+    public static function findByFoto($foto_id){
+        $model = Visualizacao::find()->where(['foto_id'=>$foto_id])->all();
         return $model;
     }
 
-    public static function findByFotoWithGroup($foto){
-        $model = Visualizacao::find()->select(['visu_data,COUNT(*) AS quantidade'])->where(['foto_id'=>$foto])->groupBy(['visu_data'])->all();
+    public static function findByFotoWithGroup($foto_id){
+        $model = Visualizacao::find()->select(['visu_data,COUNT(*) AS quantidade'])->where(['foto_id'=>$foto_id])->groupBy(['visu_data'])->all();
         return $model;
     }
 
-    public static function findByUser($usuario){
-        $model = Visualizacao::find()->innerJoin('foto')->where(['usu_id'=>$usuario])->all();
+    public static function findByUser($user_id){
+        $model = Visualizacao::find()->innerJoin('foto')->where(['usu_id'=>$user_id])->all();
         return $model;
     }
 }

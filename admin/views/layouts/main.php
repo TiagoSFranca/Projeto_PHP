@@ -37,7 +37,12 @@ AppAsset::register($this);
             'options' => [
                 'class' => 'navbar-inverse navbar-fixed-top',
             ],
-        ]) ?>
+        ]);
+        $delete = "";
+        if(!Yii::$app->user->identity->usu_login == 'admin'){
+            $delete = ['label' => '<i class="glyphicon glyphicon-trash"></i> Excluir Conta', 'url' => ['/usuario/delete']];
+        }
+        ?>
         <?php
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
@@ -57,9 +62,9 @@ AppAsset::register($this);
                         ['label' => '',
                             'options'=> ['class'=>'divider']],
                         ['label' => '<i class="glyphicon glyphicon-floppy-saved"></i> Novo Admin', 'url' => ['/usuario/create']],
-                        ['label' => '',
-                            'options'=> ['class'=>'divider']],
-                        ['label' => '<i class="glyphicon glyphicon-trash"></i> Excluir Conta', 'url' => ['/usuario/delete']],
+                        ['label' => '','options'=> ['class'=>'divider']],
+                        $delete
+
                     ]],
                     ' <li>'
                     . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])

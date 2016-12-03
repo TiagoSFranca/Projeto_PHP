@@ -225,7 +225,7 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1479910096.358
     'REQUEST_TIME' => 1479910096
 ]
-2016-11-23 15:09:36 [::1][-][-][error][Error] Error: Class 'app\controllers\LoginAdminForm' not found in C:\xampp\htdocs\basicNew\admin\controllers\SiteController.php:68
+2016-11-23 15:09:36 [::1][-][-][error][Error] Error: Class 'app\controllers\LoginForm' not found in C:\xampp\htdocs\basicNew\admin\controllers\SiteController.php:68
 Stack trace:
 #0 [internal function]: app\controllers\SiteController->actionIndex()
 #1 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
@@ -367,7 +367,7 @@ Stack trace:
 #13 {main}
 2016-11-23 15:11:46 [::1][1][he5fr92hfo8j38dbn92ots2a73][info][application] $_POST = [
     '_csrf' => 'UGJRbVNRbHkDFgJAYABYFioWHR1qE1kLJygYNwkoOkESERwbHwQVDg=='
-    'LoginAdminForm' => [
+    'LoginForm' => [
         'username' => 'admin'
         'password' => '12345678'
     ]
@@ -507,7 +507,7 @@ Stack trace:
 #1 {main}
 2016-11-23 15:24:37 [::1][-][6hmv8mrofgm9c7hq98fkchvmu0][info][application] $_POST = [
     '_csrf' => 'Lk1SX0JxTnZ9OQFycSB6GVQ5Hi97M3sEWQcbBRgIGE5sPh8pDiQ3AQ=='
-    'LoginAdminForm' => [
+    'LoginForm' => [
         'username' => 'user01'
         'password' => '12345678'
     ]
@@ -578,7 +578,7 @@ Stack trace:
 #1 {main}
 2016-11-23 15:24:54 [::1][1][6hmv8mrofgm9c7hq98fkchvmu0][info][application] $_POST = [
     '_csrf' => 'aEZkN1BwSkU7MjcaYyF.KhIyKEdpMn83HwwtbQoJHH0qNSlBHCUzMg=='
-    'LoginAdminForm' => [
+    'LoginForm' => [
         'username' => 'admin'
         'password' => '12345678'
     ]
@@ -1424,7 +1424,7 @@ Stack trace:
 #12 {main}
 2016-11-24 16:17:28 [::1][1][3nd55n6l6rot6ts91lgdt6ff55][info][application] $_POST = [
     '_csrf' => 'R19YWTNZdnY/NWgLSRQZD3QcHBBLKDoxIg4/MH8cFz4mMjd0ZRc8EQ=='
-    'LoginAdminForm' => [
+    'LoginForm' => [
         'username' => 'admin'
         'password' => '12345678'
     ]
@@ -1504,7 +1504,7 @@ Stack trace:
 #6 {main}
 2016-11-24 16:17:28 [::1][1][3nd55n6l6rot6ts91lgdt6ff55][info][application] $_POST = [
     '_csrf' => 'R19YWTNZdnY/NWgLSRQZD3QcHBBLKDoxIg4/MH8cFz4mMjd0ZRc8EQ=='
-    'LoginAdminForm' => [
+    'LoginForm' => [
         'username' => 'admin'
         'password' => '12345678'
     ]
@@ -5002,7 +5002,7 @@ $_SERVER = [
 ]
 2016-11-25 15:47:17 [::1][1][lofmj3cj0m8ktiapkddfejn1u5][error][Error] Error: Class 'app\models\Pagination' not found in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:46
 Stack trace:
-#0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(47): app\models\RelatorioForm->listarTodosUsuarios()
+#0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(47): app\models\RelatorioForm->listAllUsers()
 #1 [internal function]: app\controllers\RelatorioController->actionListUsuario()
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -5175,7 +5175,7 @@ $_SERVER = [
 ]
 2016-11-25 15:47:26 [::1][1][lofmj3cj0m8ktiapkddfejn1u5][error][Error] Error: Call to a member function count() on array in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:49
 Stack trace:
-#0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(47): app\models\RelatorioForm->listarTodosUsuarios()
+#0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(47): app\models\RelatorioForm->listAllUsers()
 #1 [internal function]: app\controllers\RelatorioController->actionListUsuario()
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -5349,7 +5349,7 @@ $_SERVER = [
 2016-11-25 15:48:10 [::1][1][lofmj3cj0m8ktiapkddfejn1u5][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property of non-object in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:42
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(42): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 42, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(47): app\models\RelatorioForm->listarTodosUsuarios()
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(47): app\models\RelatorioForm->listAllUsers()
 #2 [internal function]: app\controllers\RelatorioController->actionListUsuario()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -5436,7 +5436,7 @@ $_SERVER = [
 2016-11-25 15:48:35 [::1][1][lofmj3cj0m8ktiapkddfejn1u5][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property of non-object in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:47
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(47): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 47, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(47): app\models\RelatorioForm->listarTodosUsuarios()
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(47): app\models\RelatorioForm->listAllUsers()
 #2 [internal function]: app\controllers\RelatorioController->actionListUsuario()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -6746,7 +6746,7 @@ Stack trace:
 #0 [internal function]: yii\base\ErrorHandler->handleError(2, 'preg_match() ex...', 'C:\\xampp\\htdocs...', 612, Array)
 #1 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(612): preg_match('/^(<>|>=|>|<=|<...', Array, '<span class="ke...')
 #2 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(46): yii\db\Query->andFilterCompare('usu_data_nascim...', Array)
-#3 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(51): app\models\RelatorioForm->listarTodosUsuarios('1')
+#3 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(51): app\models\RelatorioForm->listAllUsers('1')
 #4 [internal function]: app\controllers\RelatorioController->actionListUsuario()
 #5 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #6 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -6836,7 +6836,7 @@ Stack trace:
 #0 [internal function]: yii\base\ErrorHandler->handleError(2, 'preg_match() ex...', 'C:\\xampp\\htdocs...', 612, Array)
 #1 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(612): preg_match('/^(<>|>=|>|<=|<...', Array, '<span class="ke...')
 #2 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(48): yii\db\Query->andFilterCompare('usu_data_nascim...', Array)
-#3 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(51): app\models\RelatorioForm->listarTodosUsuarios('1')
+#3 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(51): app\models\RelatorioForm->listAllUsers('1')
 #4 [internal function]: app\controllers\RelatorioController->actionListUsuario()
 #5 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #6 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -12500,7 +12500,7 @@ $_SERVER = [
 2016-11-27 19:30:50 [::1][1][svpn5km0fok2qplho4qrt2pe31][error][yii\base\ErrorException:2] yii\base\ErrorException: Creating default object from empty value in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:60
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(60): yii\base\ErrorHandler->handleError(2, 'Creating defaul...', 'C:\\xampp\\htdocs...', 60, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(50): app\models\RelatorioForm->listarTodosUsuarios('1')
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(50): app\models\RelatorioForm->listAllUsers('1')
 #2 [internal function]: app\controllers\RelatorioController->actionListUsuario()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -12594,7 +12594,7 @@ $_SERVER = [
 2016-11-27 19:31:19 [::1][1][svpn5km0fok2qplho4qrt2pe31][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property of non-object in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:61
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(61): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 61, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(50): app\models\RelatorioForm->listarTodosUsuarios('1')
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(50): app\models\RelatorioForm->listAllUsers('1')
 #2 [internal function]: app\controllers\RelatorioController->actionListUsuario()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -21071,7 +21071,7 @@ $_SERVER = [
 2016-11-28 09:41:38 [::1][1][jet6l3n783sd2ua7dospnfcer3][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property of non-object in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:60
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(60): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 60, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(52): app\models\RelatorioForm->listarTodosUsuarios('1', '2')
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(52): app\models\RelatorioForm->listAllUsers('1', '2')
 #2 [internal function]: app\controllers\RelatorioController->actionListUsuario()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -21161,7 +21161,7 @@ $_SERVER = [
 2016-11-28 09:42:21 [::1][1][jet6l3n783sd2ua7dospnfcer3][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property of non-object in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:60
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(60): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 60, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(52): app\models\RelatorioForm->listarTodosUsuarios('1', '2')
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(52): app\models\RelatorioForm->listAllUsers('1', '2')
 #2 [internal function]: app\controllers\RelatorioController->actionListUsuario()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -21251,7 +21251,7 @@ $_SERVER = [
 2016-11-28 09:44:00 [::1][1][jet6l3n783sd2ua7dospnfcer3][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property of non-object in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:61
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(61): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 61, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(52): app\models\RelatorioForm->listarTodosUsuarios('1', '2')
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(52): app\models\RelatorioForm->listAllUsers('1', '2')
 #2 [internal function]: app\controllers\RelatorioController->actionListUsuario()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -22127,7 +22127,7 @@ Stack trace:
 #7 {main}
 2016-11-28 10:35:15 [::1][1][ekqv7kbbkfvq1jgggid5a5jpn0][info][application] $_POST = [
     '_csrf' => 'M3JoeXIuYTELPQsgPUcpHHgBBUwCbQd1ZgRcA0dcDlNlICogJWwSVQ=='
-    'LoginAdminForm' => [
+    'LoginForm' => [
         'username' => 'admin'
         'password' => '12345678'
     ]
@@ -22207,7 +22207,7 @@ Stack trace:
 #6 {main}
 2016-11-28 10:35:15 [::1][1][ekqv7kbbkfvq1jgggid5a5jpn0][info][application] $_POST = [
     '_csrf' => 'M3JoeXIuYTELPQsgPUcpHHgBBUwCbQd1ZgRcA0dcDlNlICogJWwSVQ=='
-    'LoginAdminForm' => [
+    'LoginForm' => [
         'username' => 'admin'
         'password' => '12345678'
     ]
@@ -32449,7 +32449,7 @@ Stack trace:
 #12 {main}
 2016-11-29 12:21:08 [::1][1][rl83tubttcbd5o9lrfiq2q2c35][info][application] $_POST = [
     '_csrf' => 'QnBKcVhUWHkxCjkbNTEeFjA.fRMcEmsJbz54NxI4Oj47BSUnaiZqTQ=='
-    'LoginAdminForm' => [
+    'LoginForm' => [
         'username' => 'admin'
         'password' => '12345678'
     ]
@@ -32795,7 +32795,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(75): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(272): app\models\RelatorioForm->listarTodasFotos('foto_id')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(272): app\models\RelatorioForm->listAllPictures('foto_id')
 #6 [internal function]: app\controllers\RelatorioController->actionListFoto()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -32813,7 +32813,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(75): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(272): app\models\RelatorioForm->listarTodasFotos('foto_id')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(272): app\models\RelatorioForm->listAllPictures('foto_id')
 #6 [internal function]: app\controllers\RelatorioController->actionListFoto()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -33292,7 +33292,7 @@ $_SERVER = [
 2016-11-29 12:49:42 [::1][1][rl83tubttcbd5o9lrfiq2q2c35][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: yii\db\ActiveQuery::usu_login in C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Component.php:143
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(79): yii\base\Component->__get('usu_login')
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(272): app\models\RelatorioForm->listarTodasFotos('foto_id')
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(272): app\models\RelatorioForm->listAllPictures('foto_id')
 #2 [internal function]: app\controllers\RelatorioController->actionListFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -35316,7 +35316,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews('DESC', '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews('DESC', '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -35334,7 +35334,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews('DESC', '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews('DESC', '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -35470,7 +35470,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews('DESC', '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews('DESC', '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -35488,7 +35488,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews('DESC', '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews('DESC', '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -35624,7 +35624,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews('DESC', '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews('DESC', '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -35642,7 +35642,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews('DESC', '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews('DESC', '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -35778,7 +35778,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews('DESC', '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews('DESC', '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -35796,7 +35796,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews('DESC', '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews('DESC', '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -35932,7 +35932,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews('ASC', '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews('ASC', '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -35950,7 +35950,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews('ASC', '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews('ASC', '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -36086,7 +36086,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews(NULL, '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews(NULL, '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -36104,7 +36104,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews(NULL, '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews(NULL, '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -36239,7 +36239,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews(NULL, '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews(NULL, '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -36257,7 +36257,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews(NULL, '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews(NULL, '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -36392,7 +36392,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews(NULL, '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews(NULL, '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -36410,7 +36410,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews(NULL, '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews(NULL, '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -36545,7 +36545,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews(NULL, '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews(NULL, '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -36563,7 +36563,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews(NULL, '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews(NULL, '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -36698,7 +36698,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews(NULL, '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews(NULL, '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -36716,7 +36716,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews(NULL, '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews(NULL, '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -36851,7 +36851,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews(NULL, '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews(NULL, '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -36869,7 +36869,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews(NULL, '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews(NULL, '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -37004,7 +37004,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews(NULL, '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews(NULL, '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -37022,7 +37022,7 @@ Stack trace:
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Query.php(210): yii\db\Command->queryAll()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
 #4 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(93): yii\db\ActiveQuery->all()
-#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listarTodasViews(NULL, '1')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(401): app\models\RelatorioForm->listAllViews(NULL, '1')
 #6 [internal function]: app\controllers\RelatorioController->actionListView()
 #7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -42007,7 +42007,7 @@ $_SERVER = [
 2016-12-01 19:02:05 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:2] yii\base\ErrorException: Creating default object from empty value in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:118
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(118): yii\base\ErrorHandler->handleError(2, 'Creating defaul...', 'C:\\xampp\\htdocs...', 118, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(788): app\models\RelatorioForm->getFotos(Array)
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(788): app\models\RelatorioForm->getPictures(Array)
 #2 [internal function]: app\controllers\RelatorioController->actionFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -42094,7 +42094,7 @@ $_SERVER = [
 2016-12-01 19:03:02 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:2] yii\base\ErrorException: Creating default object from empty value in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:118
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(118): yii\base\ErrorHandler->handleError(2, 'Creating defaul...', 'C:\\xampp\\htdocs...', 118, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(788): app\models\RelatorioForm->getFotos(Array)
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(788): app\models\RelatorioForm->getPictures(Array)
 #2 [internal function]: app\controllers\RelatorioController->actionFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -43683,7 +43683,7 @@ $_SERVER = [
 2016-12-01 19:19:41 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property of non-object in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:865
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(865): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 865, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(794): app\controllers\RelatorioController->getFoto(Object(app\models\Usuario))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(794): app\controllers\RelatorioController->getPicture(Object(app\models\Usuario))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -43796,7 +43796,7 @@ $_SERVER = [
 2016-12-01 19:42:17 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Array to string conversion in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:842
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(842): yii\base\ErrorHandler->handleError(8, 'Array to string...', 'C:\\xampp\\htdocs...', 842, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -43910,7 +43910,7 @@ $_SERVER = [
 2016-12-01 19:42:40 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Array to string conversion in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:845
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(845): yii\base\ErrorHandler->handleError(8, 'Array to string...', 'C:\\xampp\\htdocs...', 845, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -44023,7 +44023,7 @@ $_SERVER = [
 2016-12-01 19:51:49 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: lista in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:860
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(860): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 860, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -44137,7 +44137,7 @@ $_SERVER = [
 2016-12-01 19:54:14 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: lista in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:860
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(860): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 860, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -44250,7 +44250,7 @@ $_SERVER = [
 2016-12-01 19:59:56 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property of non-object in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:870
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(870): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 870, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -44437,7 +44437,7 @@ $_SERVER = [
 2016-12-01 20:03:17 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: data in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:869
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(869): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 869, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -44550,7 +44550,7 @@ $_SERVER = [
 2016-12-01 20:05:48 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: down in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:872
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(872): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 872, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -44663,7 +44663,7 @@ $_SERVER = [
 2016-12-01 20:06:51 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: down in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:872
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(872): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 872, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -44776,7 +44776,7 @@ $_SERVER = [
 2016-12-01 20:07:27 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: down in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:872
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(872): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 872, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -44889,7 +44889,7 @@ $_SERVER = [
 2016-12-01 20:07:43 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: data in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:871
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(871): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 871, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -45002,7 +45002,7 @@ $_SERVER = [
 2016-12-01 20:07:52 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: data in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:871
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(871): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 871, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -45115,7 +45115,7 @@ $_SERVER = [
 2016-12-01 20:08:10 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: data in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:871
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(871): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 871, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -45228,7 +45228,7 @@ $_SERVER = [
 2016-12-01 20:08:32 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: data in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:871
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(871): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 871, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -45343,7 +45343,7 @@ Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\BaseActiveRecord.php(286): yii\base\Component->__get('data_down')
 #1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(898): yii\db\BaseActiveRecord->__get('data_down')
 #2 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(818): app\controllers\RelatorioController->getDadosFoto(Array, Array)
-#3 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#3 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #4 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #5 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #6 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -45459,7 +45459,7 @@ Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\BaseActiveRecord.php(286): yii\base\Component->__get('da')
 #1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(899): yii\db\BaseActiveRecord->__get('da')
 #2 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(818): app\controllers\RelatorioController->getDadosFoto(Array, Array)
-#3 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#3 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #4 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #5 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #6 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -45572,7 +45572,7 @@ $_SERVER = [
 2016-12-01 20:17:09 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:2] yii\base\ErrorException: Invalid argument supplied for foreach() in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:861
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(861): yii\base\ErrorHandler->handleError(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 861, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -45685,7 +45685,7 @@ $_SERVER = [
 2016-12-01 20:17:40 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: data in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:866
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(866): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 866, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -45800,7 +45800,7 @@ Stack trace:
 #0 [internal function]: yii\base\ErrorHandler->handleError(2, 'array_push() ex...', 'C:\\xampp\\htdocs...', 899, Array)
 #1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(899): array_push('<span class="ke...', Array)
 #2 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(818): app\controllers\RelatorioController->getDadosFoto(Array, Array)
-#3 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#3 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #4 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #5 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #6 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -45914,7 +45914,7 @@ $_SERVER = [
 2016-12-01 20:28:10 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: data in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:866
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(866): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 866, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -46027,7 +46027,7 @@ $_SERVER = [
 2016-12-01 20:29:01 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: data in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:866
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(866): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 866, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -46142,7 +46142,7 @@ Stack trace:
 #0 [internal function]: yii\base\ErrorHandler->handleError(2, 'array_push() ex...', 'C:\\xampp\\htdocs...', 899, Array)
 #1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(899): array_push('<span class="ke...', Array)
 #2 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(818): app\controllers\RelatorioController->getDadosFoto(Array, Array)
-#3 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#3 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #4 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #5 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #6 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -46257,7 +46257,7 @@ $_SERVER = [
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(922): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 922, Array)
 #1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(818): app\controllers\RelatorioController->getDadosFoto(Array, Array)
-#2 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#2 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #3 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #5 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -46372,7 +46372,7 @@ $_SERVER = [
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(922): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 922, Array)
 #1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(818): app\controllers\RelatorioController->getDadosFoto(Array, Array)
-#2 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#2 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #3 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #5 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -46484,7 +46484,7 @@ $_SERVER = [
 ]
 2016-12-01 20:48:25 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][Error] Error: Call to undefined function app\controllers\isEmpty() in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:863
 Stack trace:
-#0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #1 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -46597,7 +46597,7 @@ $_SERVER = [
 ]
 2016-12-01 20:48:31 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][Error] Error: Call to undefined function app\controllers\isEmpty() in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:863
 Stack trace:
-#0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #1 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -46710,7 +46710,7 @@ $_SERVER = [
 2016-12-01 20:52:23 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:2] yii\base\ErrorException: Creating default object from empty value in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:118
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(118): yii\base\ErrorHandler->handleError(2, 'Creating defaul...', 'C:\\xampp\\htdocs...', 118, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(786): app\models\RelatorioForm::getFoto(Array)
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(786): app\models\RelatorioForm::getPicture(Array)
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -46814,7 +46814,7 @@ $_SERVER = [
 2016-12-01 20:52:42 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:2] yii\base\ErrorException: Creating default object from empty value in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:118
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(118): yii\base\ErrorHandler->handleError(2, 'Creating defaul...', 'C:\\xampp\\htdocs...', 118, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(786): app\models\RelatorioForm::getFoto(Array)
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(786): app\models\RelatorioForm::getPicture(Array)
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -46918,7 +46918,7 @@ $_SERVER = [
 2016-12-01 20:54:46 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:2] yii\base\ErrorException: Creating default object from empty value in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:118
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(118): yii\base\ErrorHandler->handleError(2, 'Creating defaul...', 'C:\\xampp\\htdocs...', 118, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(786): app\models\RelatorioForm::getFoto(Array)
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(786): app\models\RelatorioForm::getPicture(Array)
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -47022,7 +47022,7 @@ $_SERVER = [
 2016-12-01 20:55:01 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:2] yii\base\ErrorException: Creating default object from empty value in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:118
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(118): yii\base\ErrorHandler->handleError(2, 'Creating defaul...', 'C:\\xampp\\htdocs...', 118, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(786): app\models\RelatorioForm::getFoto(Array)
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(786): app\models\RelatorioForm::getPicture(Array)
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -47125,7 +47125,7 @@ $_SERVER = [
 2016-12-01 20:55:03 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:2] yii\base\ErrorException: Creating default object from empty value in C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php:118
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\models\RelatorioForm.php(118): yii\base\ErrorHandler->handleError(2, 'Creating defaul...', 'C:\\xampp\\htdocs...', 118, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(786): app\models\RelatorioForm::getFoto(Array)
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(786): app\models\RelatorioForm::getPicture(Array)
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -47230,7 +47230,7 @@ $_SERVER = [
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(926): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 926, Array)
 #1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(819): app\controllers\RelatorioController->getDadosFoto(Array, Array)
-#2 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#2 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #3 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #5 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -47345,7 +47345,7 @@ $_SERVER = [
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(926): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', 'C:\\xampp\\htdocs...', 926, Array)
 #1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(819): app\controllers\RelatorioController->getDadosFoto(Array, Array)
-#2 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#2 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #3 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #5 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -48573,7 +48573,7 @@ $_SERVER = [
 2016-12-01 21:37:03 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: quantidade in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:846
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(846): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 846, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -48687,7 +48687,7 @@ $_SERVER = [
 2016-12-01 21:37:15 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property of non-object in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:846
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(846): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 846, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -48800,7 +48800,7 @@ $_SERVER = [
 2016-12-01 21:38:10 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: quantidade in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:846
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(846): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 846, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -48913,7 +48913,7 @@ $_SERVER = [
 2016-12-01 21:38:31 [::1][1][g6nqhrbo4ph8lj0808madjjof5][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: quantidade in C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php:819
 Stack trace:
 #0 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(819): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 819, Array)
-#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getFoto(Object(app\models\Foto))
+#1 C:\xampp\htdocs\basicNew\admin\controllers\RelatorioController.php(793): app\controllers\RelatorioController->getPicture(Object(app\models\Foto))
 #2 [internal function]: app\controllers\RelatorioController->actionSaveSingleFoto()
 #3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
 #4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
@@ -49119,4 +49119,687 @@ $_SERVER = [
     'PHP_SELF' => '/basicNew/admin/web/index.php'
     'REQUEST_TIME_FLOAT' => 1480625181.419
     'REQUEST_TIME' => 1480625181
+]
+2016-12-02 23:09:17 [::1][-][-][error][ParseError] ParseError: syntax error, unexpected 'Form' (T_STRING) in C:\xampp\htdocs\basicNew\admin\controllers\SiteController.php:68
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('app\\controllers...')
+#1 [internal function]: spl_autoload_call('app\\controllers...')
+#2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Module.php(564): class_exists('app\\controllers...')
+#3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createControllerByID('site')
+#4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Module.php(448): yii\base\Module->createController('')
+#5 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('', Array)
+#6 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\xampp\htdocs\basicNew\admin\web\index.php(12): yii\base\Application->run()
+#8 {main}
+2016-12-02 23:09:16 [::1][-][-][info][application] $_COOKIE = [
+    '_identity' => '7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '53cf69ab128c6c56933cabda9561d9455bd9330daada6f69a1ece27a1e415f95a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"39Kbp5pOWPa53PvadFzWEg0gEpNe21IV\";}'
+    'PHPSESSID' => 'h5chbuj2tp0akh91999traob05'
+]
+
+$_SERVER = [
+    'MIBDIRS' => '/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => '/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_identity=7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=53cf69ab128c6c56933cabda9561d9455bd9330daada6f69a1ece27a1e415f95a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%2239Kbp5pOWPa53PvadFzWEg0gEpNe21IV%22%3B%7D; PHPSESSID=h5chbuj2tp0akh91999traob05'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Casa\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/basicNew/admin/web/index.php'
+    'REMOTE_PORT' => '49536'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/basicNew/admin/web/'
+    'SCRIPT_NAME' => '/basicNew/admin/web/index.php'
+    'PHP_SELF' => '/basicNew/admin/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480716556.955
+    'REQUEST_TIME' => 1480716556
+]
+2016-12-02 23:09:29 [::1][-][-][error][Error] Error: Class 'app\models\LoginAdminForm' not found in C:\xampp\htdocs\basicNew\admin\controllers\SiteController.php:68
+Stack trace:
+#0 [internal function]: app\controllers\SiteController->actionIndex()
+#1 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('', Array)
+#5 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\xampp\htdocs\basicNew\admin\web\index.php(12): yii\base\Application->run()
+#7 {main}
+2016-12-02 23:09:29 [::1][-][-][info][application] $_COOKIE = [
+    '_identity' => '7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '53cf69ab128c6c56933cabda9561d9455bd9330daada6f69a1ece27a1e415f95a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"39Kbp5pOWPa53PvadFzWEg0gEpNe21IV\";}'
+    'PHPSESSID' => 'h5chbuj2tp0akh91999traob05'
+]
+
+$_SERVER = [
+    'MIBDIRS' => '/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => '/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_identity=7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=53cf69ab128c6c56933cabda9561d9455bd9330daada6f69a1ece27a1e415f95a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%2239Kbp5pOWPa53PvadFzWEg0gEpNe21IV%22%3B%7D; PHPSESSID=h5chbuj2tp0akh91999traob05'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Casa\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/basicNew/admin/web/index.php'
+    'REMOTE_PORT' => '49540'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/basicNew/admin/web/'
+    'SCRIPT_NAME' => '/basicNew/admin/web/index.php'
+    'PHP_SELF' => '/basicNew/admin/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480716569.273
+    'REQUEST_TIME' => 1480716569
+]
+2016-12-02 23:26:59 [::1][-][81de6m9n4veaipavt52tu20hi7][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [1049] Unknown database 'projeto_pwsl' in C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Connection.php:602
+Stack trace:
+#0 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Connection.php(602): PDO->__construct('mysql:host=loca...', 'root', '123456', NULL)
+#1 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Connection.php(544): yii\db\Connection->createPdoInstance()
+#2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Connection.php(863): yii\db\Connection->open()
+#3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Connection.php(850): yii\db\Connection->getMasterPdo()
+#4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Command.php(219): yii\db\Connection->getSlavePdo()
+#5 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Command.php(894): yii\db\Command->prepare(true)
+#6 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\mysql\Schema.php(198): yii\db\Command->queryAll()
+#8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\mysql\Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Schema.php(147): yii\db\mysql\Schema->loadTableSchema('usuario')
+#10 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveRecord.php(296): yii\db\Schema->getTableSchema('usuario')
+#11 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveRecord.php(320): yii\db\ActiveRecord::getTableSchema()
+#12 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#13 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\BaseActiveRecord.php(107): yii\db\ActiveRecord::findByCondition(1)
+#14 C:\xampp\htdocs\basicNew\admin\models\Usuario.php(87): yii\db\BaseActiveRecord::findOne(1)
+#15 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\web\User.php(665): app\models\Usuario::findIdentity(1)
+#16 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\web\User.php(188): yii\web\User->renewAuthStatus()
+#17 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\web\User.php(340): yii\web\User->getIdentity()
+#18 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Component.php(130): yii\web\User->getIsGuest()
+#19 C:\xampp\htdocs\basicNew\admin\controllers\SiteController.php(44): yii\base\Component->__get('isGuest')
+#20 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(152): app\controllers\SiteController->beforeAction(Object(yii\base\InlineAction))
+#21 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#22 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('site/index', Array)
+#23 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#24 C:\xampp\htdocs\basicNew\admin\web\index.php(12): yii\base\Application->run()
+#25 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1049] Unknown database 'projeto_pwsl' in C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Connection.php:549
+Stack trace:
+#0 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Connection.php(863): yii\db\Connection->open()
+#1 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Connection.php(850): yii\db\Connection->getMasterPdo()
+#2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Command.php(219): yii\db\Connection->getSlavePdo()
+#3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Command.php(894): yii\db\Command->prepare(true)
+#4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\mysql\Schema.php(198): yii\db\Command->queryAll()
+#6 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\mysql\Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\Schema.php(147): yii\db\mysql\Schema->loadTableSchema('usuario')
+#8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveRecord.php(296): yii\db\Schema->getTableSchema('usuario')
+#9 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveRecord.php(320): yii\db\ActiveRecord::getTableSchema()
+#10 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#11 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\db\BaseActiveRecord.php(107): yii\db\ActiveRecord::findByCondition(1)
+#12 C:\xampp\htdocs\basicNew\admin\models\Usuario.php(87): yii\db\BaseActiveRecord::findOne(1)
+#13 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\web\User.php(665): app\models\Usuario::findIdentity(1)
+#14 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\web\User.php(188): yii\web\User->renewAuthStatus()
+#15 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\web\User.php(340): yii\web\User->getIdentity()
+#16 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Component.php(130): yii\web\User->getIsGuest()
+#17 C:\xampp\htdocs\basicNew\admin\controllers\SiteController.php(44): yii\base\Component->__get('isGuest')
+#18 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(152): app\controllers\SiteController->beforeAction(Object(yii\base\InlineAction))
+#19 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#20 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('site/index', Array)
+#21 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#22 C:\xampp\htdocs\basicNew\admin\web\index.php(12): yii\base\Application->run()
+#23 {main}
+Additional Information:
+
+2016-12-02 23:26:59 [::1][-][81de6m9n4veaipavt52tu20hi7][info][application] $_POST = [
+    '_csrf' => 'S1NwMS5YSHR4ajtTXm04OxwDEQQdCD4VLxUKZms/eBMOIz5UHGkBIg=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => '12345678'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '53cf69ab128c6c56933cabda9561d9455bd9330daada6f69a1ece27a1e415f95a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"39Kbp5pOWPa53PvadFzWEg0gEpNe21IV\";}'
+    'PHPSESSID' => '81de6m9n4veaipavt52tu20hi7'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => '/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => '/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => '/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => '/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '131'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/basicNew/admin/web/site/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_identity=7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=53cf69ab128c6c56933cabda9561d9455bd9330daada6f69a1ece27a1e415f95a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%2239Kbp5pOWPa53PvadFzWEg0gEpNe21IV%22%3B%7D; PHPSESSID=81de6m9n4veaipavt52tu20hi7'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Casa\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/basicNew/admin/web/index.php'
+    'REMOTE_PORT' => '49734'
+    'REDIRECT_URL' => '/basicNew/admin/web/site/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/basicNew/admin/web/site/index'
+    'SCRIPT_NAME' => '/basicNew/admin/web/index.php'
+    'PHP_SELF' => '/basicNew/admin/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480717619.4
+    'REQUEST_TIME' => 1480717619
+]
+2016-12-03 13:01:08 [::1][1][frfu2rc2em72loc7o8no65hhl2][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The 'label' option is required. in C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2-bootstrap\Dropdown.php:112
+Stack trace:
+#0 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2-bootstrap\Dropdown.php(90): yii\bootstrap\Dropdown->renderItems(Array, Array)
+#1 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Widget.php(102): yii\bootstrap\Dropdown->run()
+#2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2-bootstrap\Nav.php(219): yii\base\Widget::widget(Array)
+#3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2-bootstrap\Nav.php(193): yii\bootstrap\Nav->renderDropdown(Array, Array)
+#4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2-bootstrap\Nav.php(147): yii\bootstrap\Nav->renderItem(Array)
+#5 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2-bootstrap\Nav.php(134): yii\bootstrap\Nav->renderItems()
+#6 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Widget.php(102): yii\bootstrap\Nav->run()
+#7 C:\xampp\htdocs\basicNew\admin\views\layouts\main.php(49): yii\base\Widget::widget(Array)
+#8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\View.php(326): require('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#10 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(393): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\SiteController))
+#11 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(379): yii\base\Controller->renderContent('<div class="sit...')
+#12 C:\xampp\htdocs\basicNew\admin\controllers\SiteController.php(91): yii\base\Controller->render('index', Array)
+#13 [internal function]: app\controllers\SiteController->actionIndex()
+#14 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#15 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#17 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('', Array)
+#18 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 C:\xampp\htdocs\basicNew\admin\web\index.php(12): yii\base\Application->run()
+#20 {main}
+2016-12-03 13:01:07 [::1][1][frfu2rc2em72loc7o8no65hhl2][info][application] $_POST = [
+    '_csrf' => 'aUhNQzB2cHcILnUgBUM2MFF9KC9GOhc5IgUcLEUTETpQPAZwZQMEEA=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => '12345678'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '2249585c57d5f9080d70f4a75bb4e21a89a81a99363bdb4611272596148dd25ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"af8c55FG85elvLgNKMQoueaM9tK3Uutg\";}'
+    'PHPSESSID' => '1ccbuol93ournc48c7jdt7qrd5'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => '/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => '/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '129'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/basicNew/admin/web/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_identity=7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=2249585c57d5f9080d70f4a75bb4e21a89a81a99363bdb4611272596148dd25ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22af8c55FG85elvLgNKMQoueaM9tK3Uutg%22%3B%7D; PHPSESSID=1ccbuol93ournc48c7jdt7qrd5'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Casa\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/basicNew/admin/web/index.php'
+    'REMOTE_PORT' => '49281'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/basicNew/admin/web/'
+    'SCRIPT_NAME' => '/basicNew/admin/web/index.php'
+    'PHP_SELF' => '/basicNew/admin/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480766467.851
+    'REQUEST_TIME' => 1480766467
+]
+2016-12-03 13:03:34 [::1][1][aq4bitor5h71i4lnhkrs1rinf3][error][yii\base\ErrorException:8] yii\base\ErrorException: Array to string conversion in C:\xampp\htdocs\basicNew\admin\views\layouts\main.php:43
+Stack trace:
+#0 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\View.php(326): yii\base\ErrorHandler->handleError(8, 'Array to string...', 'C:\\xampp\\htdocs...', 43, Array)
+#1 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\View.php(326): require()
+#2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(393): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\SiteController))
+#4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(379): yii\base\Controller->renderContent('<div class="sit...')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\SiteController.php(91): yii\base\Controller->render('index', Array)
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#10 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('', Array)
+#11 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\xampp\htdocs\basicNew\admin\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-03 13:03:34 [::1][1][aq4bitor5h71i4lnhkrs1rinf3][info][application] $_POST = [
+    '_csrf' => 'aUhNQzB2cHcILnUgBUM2MFF9KC9GOhc5IgUcLEUTETpQPAZwZQMEEA=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => '12345678'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '2249585c57d5f9080d70f4a75bb4e21a89a81a99363bdb4611272596148dd25ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"af8c55FG85elvLgNKMQoueaM9tK3Uutg\";}'
+    'PHPSESSID' => 'frfu2rc2em72loc7o8no65hhl2'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => '/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => '/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '129'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/basicNew/admin/web/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_identity=7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=2249585c57d5f9080d70f4a75bb4e21a89a81a99363bdb4611272596148dd25ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22af8c55FG85elvLgNKMQoueaM9tK3Uutg%22%3B%7D; PHPSESSID=frfu2rc2em72loc7o8no65hhl2'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Casa\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/basicNew/admin/web/index.php'
+    'REMOTE_PORT' => '49287'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/basicNew/admin/web/'
+    'SCRIPT_NAME' => '/basicNew/admin/web/index.php'
+    'PHP_SELF' => '/basicNew/admin/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480766614.516
+    'REQUEST_TIME' => 1480766614
+]
+2016-12-03 13:04:41 [::1][1][dvq5d9bd7q17k5n93vcuo7tfk6][error][yii\base\ErrorException:8] yii\base\ErrorException: Array to string conversion in C:\xampp\htdocs\basicNew\admin\views\layouts\main.php:44
+Stack trace:
+#0 C:\xampp\htdocs\basicNew\admin\views\layouts\main.php(44): yii\base\ErrorHandler->handleError(8, 'Array to string...', 'C:\\xampp\\htdocs...', 44, Array)
+#1 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\View.php(326): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(393): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\SiteController))
+#4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(379): yii\base\Controller->renderContent('<div class="sit...')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\SiteController.php(91): yii\base\Controller->render('index', Array)
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#10 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('', Array)
+#11 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\xampp\htdocs\basicNew\admin\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-03 13:04:41 [::1][1][dvq5d9bd7q17k5n93vcuo7tfk6][info][application] $_POST = [
+    '_csrf' => 'aUhNQzB2cHcILnUgBUM2MFF9KC9GOhc5IgUcLEUTETpQPAZwZQMEEA=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => '12345678'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '2249585c57d5f9080d70f4a75bb4e21a89a81a99363bdb4611272596148dd25ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"af8c55FG85elvLgNKMQoueaM9tK3Uutg\";}'
+    'PHPSESSID' => '517c1kajappd0lb9au5b17sm30'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => '/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => '/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '129'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/basicNew/admin/web/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_identity=7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=2249585c57d5f9080d70f4a75bb4e21a89a81a99363bdb4611272596148dd25ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22af8c55FG85elvLgNKMQoueaM9tK3Uutg%22%3B%7D; PHPSESSID=517c1kajappd0lb9au5b17sm30'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Casa\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/basicNew/admin/web/index.php'
+    'REMOTE_PORT' => '49301'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/basicNew/admin/web/'
+    'SCRIPT_NAME' => '/basicNew/admin/web/index.php'
+    'PHP_SELF' => '/basicNew/admin/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480766681.702
+    'REQUEST_TIME' => 1480766681
+]
+2016-12-03 13:05:31 [::1][1][02l8u3jqcaqte8vtf1cpvj6k93][error][yii\base\ErrorException:8] yii\base\ErrorException: Array to string conversion in C:\xampp\htdocs\basicNew\admin\views\layouts\main.php:44
+Stack trace:
+#0 C:\xampp\htdocs\basicNew\admin\views\layouts\main.php(44): yii\base\ErrorHandler->handleError(8, 'Array to string...', 'C:\\xampp\\htdocs...', 44, Array)
+#1 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\View.php(326): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(393): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\SiteController))
+#4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(379): yii\base\Controller->renderContent('<div class="sit...')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\SiteController.php(91): yii\base\Controller->render('index', Array)
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#10 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('', Array)
+#11 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\xampp\htdocs\basicNew\admin\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-03 13:05:31 [::1][1][02l8u3jqcaqte8vtf1cpvj6k93][info][application] $_POST = [
+    '_csrf' => 'aUhNQzB2cHcILnUgBUM2MFF9KC9GOhc5IgUcLEUTETpQPAZwZQMEEA=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => '12345678'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '2249585c57d5f9080d70f4a75bb4e21a89a81a99363bdb4611272596148dd25ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"af8c55FG85elvLgNKMQoueaM9tK3Uutg\";}'
+    'PHPSESSID' => 's4vtovhbc1a2luq49kgk56v4m7'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => '/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => '/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '129'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/basicNew/admin/web/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_identity=7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=2249585c57d5f9080d70f4a75bb4e21a89a81a99363bdb4611272596148dd25ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22af8c55FG85elvLgNKMQoueaM9tK3Uutg%22%3B%7D; PHPSESSID=s4vtovhbc1a2luq49kgk56v4m7'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Casa\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/basicNew/admin/web/index.php'
+    'REMOTE_PORT' => '49310'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/basicNew/admin/web/'
+    'SCRIPT_NAME' => '/basicNew/admin/web/index.php'
+    'PHP_SELF' => '/basicNew/admin/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480766731.082
+    'REQUEST_TIME' => 1480766731
+]
+2016-12-03 13:06:55 [::1][1][utb9qql0luht6f0r9cork6uc63][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: delete in C:\xampp\htdocs\basicNew\admin\views\layouts\main.php:65
+Stack trace:
+#0 C:\xampp\htdocs\basicNew\admin\views\layouts\main.php(65): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 65, Array)
+#1 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\View.php(326): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(393): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(app\controllers\SiteController))
+#4 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(379): yii\base\Controller->renderContent('<div class="sit...')
+#5 C:\xampp\htdocs\basicNew\admin\controllers\SiteController.php(91): yii\base\Controller->render('index', Array)
+#6 [internal function]: app\controllers\SiteController->actionIndex()
+#7 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#10 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('', Array)
+#11 C:\xampp\htdocs\basicNew\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\xampp\htdocs\basicNew\admin\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2016-12-03 13:06:55 [::1][1][utb9qql0luht6f0r9cork6uc63][info][application] $_POST = [
+    '_csrf' => 'aUhNQzB2cHcILnUgBUM2MFF9KC9GOhc5IgUcLEUTETpQPAZwZQMEEA=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => '12345678'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => '7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '2249585c57d5f9080d70f4a75bb4e21a89a81a99363bdb4611272596148dd25ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"af8c55FG85elvLgNKMQoueaM9tK3Uutg\";}'
+    'PHPSESSID' => '0faf23t5fuuliu91a7us05l6s7'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'MIBDIRS' => '/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => '/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '129'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/basicNew/admin/web/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => '_identity=7de0b97829ae12ffb68a9a46adc7ef15fa1c8c390ca5fd002bf62b5509ebb0bba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=2249585c57d5f9080d70f4a75bb4e21a89a81a99363bdb4611272596148dd25ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22af8c55FG85elvLgNKMQoueaM9tK3Uutg%22%3B%7D; PHPSESSID=0faf23t5fuuliu91a7us05l6s7'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files (x86)\\Intel\\OpenCL SDK\\2.0\\bin\\x64;C:\\Windows\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\MySQL\\MySQL Utilities 1.6\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\Casa\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/7.0.9'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/basicNew/admin/web/index.php'
+    'REMOTE_PORT' => '49315'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/basicNew/admin/web/'
+    'SCRIPT_NAME' => '/basicNew/admin/web/index.php'
+    'PHP_SELF' => '/basicNew/admin/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480766815.509
+    'REQUEST_TIME' => 1480766815
 ]

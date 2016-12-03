@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use app\models\Download;
 use app\models\Foto;
-use app\models\LoginAdminForm;
+use app\models\LoginForm;
 use app\models\Usuario;
 use app\models\Visualizacao;
 use Yii;
@@ -40,9 +40,16 @@ class SiteController extends Controller
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
+    public function beforeAction($action){
+        if (!Yii::$app->user->isGuest && Yii::$app->user->identity->ace_id != 1) {
+            Yii::$app->user->logout();
+            return $this->goHome();
+        } else {
+            return $action;
+        }
+    }
+
+
     public function actions()
     {
         //AppAsset::verifyAccess(1);
@@ -64,7 +71,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $model = new LoginAdminForm();
+        $model = new LoginForm();
 
         if (($model->load(Yii::$app->request->post()) && $model->login()) || !Yii::$app->user->isGuest) {
             $parametro = Yii::$app->getRequest()->getQueryParam('q');

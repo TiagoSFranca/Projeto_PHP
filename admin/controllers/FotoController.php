@@ -50,7 +50,6 @@ class FotoController extends Controller
         }
     }
 
-
     public function actionSee($id)
     {
         $model = $this->findModel($id);
@@ -98,7 +97,6 @@ class FotoController extends Controller
         Yii::$app->getSession()->setFlash('sucess', 'Exclusão realizada Com Sucesso.');
 
     }
-
 
     public function actionIndex()
     {

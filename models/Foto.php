@@ -62,41 +62,17 @@ class Foto extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getDownloads()
-    {
-        return $this->hasMany(Download::className(), ['foto_id' => 'foto_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUsu()
-    {
-        return $this->hasOne(Usuario::className(), ['usu_id' => 'usu_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVisualizacaos()
-    {
-        return $this->hasMany(Visualizacao::className(), ['foto_id' => 'foto_id']);
-    }
-
-    public static function findByUser($usuario){
-        $model = Foto::find()->where(['usu_id' =>$usuario])->orderBy('foto_nome')->all();
+    public static function findByUser($user_id){
+        $model = Foto::find()->where(['usu_id' =>$user_id])->orderBy('foto_nome')->all();
         return $model;
     }
 
-    public static function findByLike($param,$user = null)
+    public static function findByLike($param,$user_id = null)
     {
         $query = Foto::find()->andFilterWhere(['like', 'foto_nome', $param])
             ->orFilterWhere(['like', 'foto_tag', $param])->all();
-        if($user != null)
-            $query = Foto::findBySql("SELECT * FROM foto where usu_id = $user and (foto_nome like '%$param%' or foto_tag like '%$param%');")->orderBy(['foto_downloads' => SORT_DESC])->all();
+        if($user_id != null)
+            $query = Foto::findBySql("SELECT * FROM foto where usu_id = $user_id and (foto_nome like '%$param%' or foto_tag like '%$param%');")->orderBy(['foto_downloads' => SORT_DESC])->all();
 
         return $query;
     }

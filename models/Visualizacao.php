@@ -48,16 +48,9 @@ class Visualizacao extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getFoto()
-    {
-        return $this->hasOne(Foto::className(), ['foto_id' => 'foto_id']);
-    }
 
-    public static function findByFoto($foto){
-        $model = Visualizacao::find()->where(['foto_id'=>$foto])->all();
+    public static function findByFoto($foto_id){
+        $model = Visualizacao::find()->where(['foto_id'=>$foto_id])->all();
         return $model;
     }
 }

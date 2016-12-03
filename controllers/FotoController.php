@@ -21,7 +21,6 @@ class FotoController extends Controller
 {
 
 
-
     public function beforeAction($action){
         if (!Yii::$app->user->isGuest && Yii::$app->user->identity->ace_id != 2) {
             Yii::$app->user->logout();
@@ -77,7 +76,6 @@ class FotoController extends Controller
         }
     }
 
-
     public function actionSee($id)
     {
         $model = $this->findModel($id);
@@ -91,10 +89,11 @@ class FotoController extends Controller
             'model' => $model,
         ]);
     }
+
     public function actionDelete($id)
     {
         if ($this->verificarLogin()) {
-            //unlink(Yii::getAlias('@app') . $this->findModel($id)->foto_caminho);
+            unlink(Yii::getAlias('@app') . $this->findModel($id)->foto_caminho);
             Download::deleteAll(['foto_id'=>$id]);
             Visualizacao::deleteAll(['foto_id'=>$id]);
             $this->findModel($id)->delete();
@@ -105,27 +104,13 @@ class FotoController extends Controller
 
     }
 
-    private function redirecionar(){
-        /*$foto->foto_downloads += 1;
-        $foto->save();
-        Yii::$app->getSession()->setFlash('sucess', 'Download realizado Com Sucesso.');*/
-        return $this->redirect(["/site/index"]);
-    }
-
     public function actionDownload($id){
-    $path = Yii::getAlias('@app');
-    $foto  = $this->findModel($id);
-    $file = $path .$foto->foto_caminho;
+        $path = Yii::getAlias('@app');
+        $foto  = $this->findModel($id);
+        $file = $path .$foto->foto_caminho;
 
-    if (file_exists($file)) {
-        //ini_set('max_execution_time', 5*60);
-        //Yii::$app->response->SendFile($file)->send();
-        Yii::$app->response->sendFile($file)->on(\yii\web\Response::EVENT_AFTER_SEND, function($event) {
-            /*$foto->foto_downloads += 1;
-            $foto->save();*/
-            Yii::$app->getSession()->setFlash('sucess', 'Download realizado Com Sucesso.');
-            $this->redirecionar();
-    }, $file);
+        if (file_exists($file)) {
+            Yii::$app->response->sendFile($file);
             $download = new Download();
             $download->foto_id = $foto->foto_id;
             $download->down_data = date('y-m-d');

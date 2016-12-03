@@ -56,7 +56,7 @@ class UsuarioDeleteForm extends Model
 
 
 
-    public function deletarUsuario(){
+    public function deleteUser(){
         if($this->validate()) {
             $fotos = Foto::findByUser($this->_user->usu_id);
             foreach ($fotos as $foto){

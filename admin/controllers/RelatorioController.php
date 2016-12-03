@@ -102,7 +102,7 @@ class RelatorioController extends Controller
             $usu_id = $user["id"];
             $usu_nome = $user["nome"];
             $usu_login = $user["login"];
-            $query = $model->listarFotosUsuarios($usu_id);
+            $query = $model->listAllPicturesOfUser($usu_id);
             $models  = new ArrayDataProvider([
                 'allModels' => $query,
             ]);
@@ -245,7 +245,7 @@ class RelatorioController extends Controller
                 $tipoUsuario =  Yii::$app->getRequest()->getBodyParam('tipo_usuario');
                 $filtro = Yii::$app->getRequest()->getBodyParam('filtro');
                 $ordenacao =  Yii::$app->getRequest()->getBodyParam('ordenacao');
-                $query = $model->listarTodosUsuarios($parametro,$tipoUsuario,$filtro,$ordenacao);
+                $query = $model->listAllUsers($parametro,$tipoUsuario,$filtro,$ordenacao);
                 $models  = new ArrayDataProvider([
                     'allModels' => $query,
                 ]);
@@ -423,7 +423,7 @@ class RelatorioController extends Controller
 
                 $filtro = Yii::$app->getRequest()->getBodyParam('filtro');
                 $ordenacao =  Yii::$app->getRequest()->getBodyParam('ordenacao');
-                $query = $model->listarTodasFotos($ordenacao,$filtro);
+                $query = $model->listAllPictures($ordenacao,$filtro);
                 $models  = new ArrayDataProvider([
                     'allModels' => $query,
                 ]);
@@ -550,7 +550,7 @@ class RelatorioController extends Controller
             $ordenacao =  Yii::$app->getRequest()->getBodyParam('ordenacao');
             $filtro = Yii::$app->getRequest()->getBodyParam('filtro');
             if ($model->load(Yii::$app->request->post())) {
-                $query = $model->listarTodasViews($ordenacao,$filtro);
+                $query = $model->listAllViews($ordenacao,$filtro);
                 $models  = new ArrayDataProvider([
                     'allModels' => $query,
                 ]);
@@ -669,7 +669,7 @@ class RelatorioController extends Controller
             $ordenacao =  Yii::$app->getRequest()->getBodyParam('ordenacao');
             $filtro = Yii::$app->getRequest()->getBodyParam('filtro');
             if ($model->load(Yii::$app->request->post())) {
-                $query = $model->listarTodosDownloads($ordenacao,$filtro);
+                $query = $model->listAllDownloads($ordenacao,$filtro);
                 $models  = new ArrayDataProvider([
                     'allModels' => $query,
                 ]);
@@ -783,14 +783,14 @@ class RelatorioController extends Controller
 
     public function actionSaveSingleFoto(){
         $foto_id = Yii::$app->getRequest()->post();
-        $foto = RelatorioForm::getFoto($foto_id);
+        $foto = RelatorioForm::getPicture($foto_id);
         $content = $this->getContent(null);
         $pdf = new Pdf([
             'mode' => Pdf::MODE_CORE,
             'format' => Pdf::FORMAT_A4,
             'orientation' => Pdf::ORIENT_PORTRAIT,
             'destination' => Pdf::DEST_BROWSER,
-            'content' => $content.$this->getFoto($foto),
+            'content' => $content.$this->getPicture($foto),
             'cssFile' => '@vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.min.css',
             'options' => ['title' => 'Picture Report'],
             'cssInline'=>
@@ -811,7 +811,7 @@ class RelatorioController extends Controller
         return $pdf->render();
     }
 
-    private function getFoto($foto){
+    private function getPicture($foto){
         $chave = 0;
         $usuario = $foto->usu_login;
         $downloads = $foto->downloads;
