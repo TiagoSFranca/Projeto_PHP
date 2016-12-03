@@ -42,6 +42,7 @@ class UsuarioForm extends Model
             ['usu_login','validateLogin'],
             ['usu_senha','validatePassword'],
             ['usu_email','validateEmail'],
+            ['usu_data_nascimento','validateDate'],
             [ 'usu_login', 'match', 'not' => true, 'pattern' => '/[^0-9!@#$%+.&*a-zA-Z_-]/',
                 'message' => 'Apenas [ 0-9 ,a-z , A-Z , _ , - , ! , @ , # , $ , % , + , . , & , *]'],
             [ 'usu_senha', 'match', 'not' => true, 'pattern' => '/[^0-9!@#$%+.&*a-zA-Z_-]/',
@@ -65,6 +66,14 @@ class UsuarioForm extends Model
         if (!$this->hasErrors()) {
             if(substr_count($this->usu_senha,' ') >=1){
                 $this->addError($attribute, 'Não pode conter espaços em branco');
+            }
+        }
+    }
+    public function validateDate($attribute, $params)
+    {
+        if (!$this->hasErrors()) {
+            if (time() < strtotime('+18 years', strtotime($this->usu_data_nascimento)) || time() > strtotime('-100 years', strtotime($this->usu_data_nascimento)) ) {
+                $this->addError($attribute, 'Deve possuir entre 18 e 100 anos');
             }
         }
     }

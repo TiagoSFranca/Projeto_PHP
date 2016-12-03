@@ -98,6 +98,7 @@ class FotoController extends Controller
             Visualizacao::deleteAll(['foto_id'=>$id]);
             $this->findModel($id)->delete();
             Yii::$app->getSession()->setFlash('sucess', 'Exclusão realizada Com Sucesso.');
+            $this->goHome();
         }else{
             $this->goHome();
         }
@@ -111,10 +112,13 @@ class FotoController extends Controller
 
         if (file_exists($file)) {
             Yii::$app->response->sendFile($file);
-            $download = new Download();
-            $download->foto_id = $foto->foto_id;
-            $download->down_data = date('y-m-d');
-            $download->save();
+
+            if (Yii::$app->user->getId() !== $foto->usu_id || Yii::$app->user->isGuest) {
+                $download = new Download();
+                $download->foto_id = $foto->foto_id;
+                $download->down_data = date('y-m-d');
+                $download->save();
+            }
         }
     }
 

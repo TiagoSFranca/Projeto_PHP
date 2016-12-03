@@ -100,7 +100,7 @@ class UsuarioController extends Controller
             $model->usu_sexo = $user->usu_sexo;
             $model->_user = $user;
             if ($model->load(Yii::$app->request->post()) && $model->updateUser()) {
-                Yii::$app->getSession()->setFlash('sucess', 'Cadastro realizado Com Sucesso.');
+                Yii::$app->getSession()->setFlash('sucess', 'Dados Alterados Com Sucesso.');
                 return $this->redirect(["/usuario/index"]);
             } else {
                 return $this->render('config', [
@@ -166,7 +166,7 @@ class UsuarioController extends Controller
             $model = new UsuarioMailForm();
             $model->_user = $user;
             if ($model->load(Yii::$app->request->post()) && $model->updateEmail()) {
-                Yii::$app->getSession()->setFlash('sucess', 'Senha Alterada Com Sucesso.');
+                Yii::$app->getSession()->setFlash('sucess', 'Email Alterado Com Sucesso.');
                 return $this->redirect(["/usuario/index"]);
             } else {
                 return $this->render('mail', [
