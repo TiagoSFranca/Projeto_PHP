@@ -108,9 +108,6 @@ $this->registerJs($js);
     </div>
 
     <?php ActiveForm::end(); ?>
-    <?php
-    echo __DIR__;
-    ?>
     <div class="container">
         <div class="row">
             <?php
@@ -152,7 +149,7 @@ $this->registerJs($js);
                                 ?>
                             </p>
                         </div>
-                        <a class="ratio img-responsive img-circle" style="background-image: url(<?='__DIR__/../../../../basicNew/'.$foto->foto_caminho?>);"></a>
+                        <a class="ratio img-responsive img-circle" style="background-image: url(<?='__DIR__/../../../../Cimatec_Photo/'.$foto->foto_caminho?>);"></a>
 
                     </div>
                 </div>
@@ -164,8 +161,9 @@ $this->registerJs($js);
                 <h3 class="error text-danger">Não há fotos para exibir
                     <?php
                         if($parametro != null)
-                            echo "com o Parâmetro de Pesquisa: $parametro"
-                    ?>.</h3>
+                            echo "com o parâmetro de pesquisa: $parametro"
+                    ?>.
+                </h3>
                 <?php
             }
             ?>

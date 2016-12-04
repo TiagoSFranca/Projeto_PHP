@@ -36,6 +36,7 @@ class FotoController extends Controller
         return true;
     }
 
+
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
@@ -92,9 +93,16 @@ class FotoController extends Controller
 
     public function actionDelete($id)
     {
-        unlink(Yii::getAlias('@app').$this->findModel($id)->foto_caminho);
-        $this->findModel($id)->delete();
-        Yii::$app->getSession()->setFlash('sucess', 'Exclusão realizada Com Sucesso.');
+        if ($this->verificarLogin()) {
+            unlink(Yii::getAlias('@app') . $this->findModel($id)->foto_caminho);
+            Download::deleteAll(['foto_id'=>$id]);
+            Visualizacao::deleteAll(['foto_id'=>$id]);
+            $this->findModel($id)->delete();
+            Yii::$app->getSession()->setFlash('sucess', 'Exclusão realizada Com Sucesso.');
+            $this->goHome();
+        }else{
+            $this->goHome();
+        }
 
     }
 
