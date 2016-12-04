@@ -1,7 +1,6 @@
 <?php
 use \yii\bootstrap\Html;
-use app\models\Download;
-use app\models\Visualizacao;
+use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 
 $this->title = 'Perfil';
@@ -91,6 +90,24 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
     </p>
     <div class="container">
+        <?php
+        $form = ActiveForm::begin([
+            'action' => ['usuario/index'],
+            'method' => 'get',
+        ]);
+        ?>
+        <div class="col-sm-5 col-md-5 col-lg-12">
+            <form class="navbar-form" role="search">
+                <div class="input-group col-sm-5 col-md-5 pull-right">
+                    <input type="text" class="form-control" placeholder="Pesquisar" name="q" >
+                    <div class="input-group-btn">
+                        <?= Html::submitButton('<i class="glyphicon glyphicon-search gi"></i>', ['class' => 'btn btn-primary']) ?>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <?php ActiveForm::end(); ?>
         <div class="row">
             <?php
             if (sizeof($modelFoto) > 0) {
@@ -121,8 +138,15 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <?=
                                     Html::a(
                                         '<i class="glyphicon glyphicon-pencil gi-2x"></i>',
-                                        ['foto/update', 'id' => $foto->foto_id],
-                                        ['class' => 'btn btn-primary  marginalizado']
+                                        ['foto/update'],
+                                        ['class' => 'btn btn-primary  marginalizado',
+                                            'data' => [
+                                                'method' => 'post',
+                                                'params'=>[
+                                                    'id' => $foto->foto_id
+                                                ]
+                                            ],
+                                        ]
                                     )
                                     ?>
 

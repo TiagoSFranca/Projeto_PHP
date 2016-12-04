@@ -96,7 +96,7 @@ class RelatorioForm extends Model
                 $query->andFilterCompare('down_data', '>=' . $this->data_inicial);
             }
 
-            $downs = $query->groupBy('down_data')->orderBy($filter.' '.$sort)->all();
+            $downs = $query->andWhere(['<>','down_data','0000-00-00'])->groupBy('down_data')->orderBy($filter.' '.$sort)->all();
             return $downs;
         }
         return false;

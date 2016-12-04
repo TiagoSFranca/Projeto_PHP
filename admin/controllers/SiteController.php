@@ -79,10 +79,10 @@ class SiteController extends Controller
             if($parametro != null){
                 $usuarios = Usuario::findByLike($parametro);
             }else {
-                $usuarios = Usuario::findAll(['ace_id' => 2]);
+                $usuarios = Usuario::find()->where(['ace_id' => 2])->orderBy('usu_nome')->all();
             }
                 foreach ($usuarios as $usuario) {
-                    $usuario->downloads = sizeof(Download::findByUser($usuario->usu_id));
+                    $usuario->downloads = sizeof(Download::findByUser($usuario->usu_id))-1;
                     $usuario->fotos = sizeof(Foto::findByUser($usuario->usu_id));
                     $usuario->visualizacoes = sizeof(Visualizacao::findByUser($usuario->usu_id));
                 }

@@ -44,7 +44,7 @@ class RelatorioController extends Controller
                 <div class=\"row-fluid\">
                     <div class=\"col-xs-12 col-md-12 panel-heading\">
                         <h4 class=\"text-center\">
-                            Projeto PHP
+                            Cimatec Photo
                         </h4>
                     </div>
                 </div>

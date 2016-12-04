@@ -15,7 +15,7 @@ use Yii;
  */
 class Visualizacao extends \yii\db\ActiveRecord
 {
-
+    public $quantidade;
     /**
      * @inheritdoc
      */

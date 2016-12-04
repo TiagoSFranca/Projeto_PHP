@@ -15,6 +15,7 @@ namespace app\models;
 class Download extends \yii\db\ActiveRecord
 {
 
+    public $quantidade;
     /**
      * @inheritdoc
      */
@@ -51,17 +52,17 @@ class Download extends \yii\db\ActiveRecord
 
 
     public static function findByFoto($foto_id){
-        $model = Download::find()->where(['foto_id'=>$foto_id])->all();
+        $model = Download::find()->where(['foto_id'=>$foto_id])->andWhere(['<>','down_data','0000-00-00'])->all();
         return $model;
     }
 
     public static function findByFotoWithGroup($foto_id){
-        $model = Download::find()->select(['down_data,COUNT(*) AS quantidade'])->where(['foto_id'=>$foto_id])->groupBy(['down_data'])->all();
+        $model = Download::find()->select(['down_data,COUNT(*) AS quantidade'])->where(['foto_id'=>$foto_id])->andWhere(['<>','down_data','0000-00-00'])->groupBy(['down_data'])->all();
         return $model;
     }
 
     public static function findByUser($user_id){
-        $model = Download::find()->innerJoin('foto')->where(['usu_id'=>$user_id])->all();
+        $model = Download::find()->innerJoin('foto')->andWhere(['<>','down_data','0000-00-00'])->where(['usu_id'=>$user_id])->all();
         return $model;
     }
 }

@@ -34,28 +34,12 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'Site Qualquer',
+        'brandLabel' => 'Cimatec Photo',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ])?>
-    <?php
-        Yii::$app->user->isGuest ? $caminho = 'site/index':$caminho = 'usuario/index';
-        $form = ActiveForm::begin([
-            'action' => [$caminho],
-            'method' => 'get',
-            'class'=>'navbar-form',
-        ]);
-    ?>
-            <div class="navbar-nav bottom-right">
-                <div class="inline input-group">
-                    <input type="text" class="search-query input-sm" placeholder="Pesquisar" name="q" id="q">
-                    <?= Html::submitButton('<i class="glyphicon glyphicon-search"></i>', ['class' => 'btn btn-primary input-sm']) ?>
-                </div>
-            </div>
-
-    <?php ActiveForm::end(); ?>
     <?php
     if(Yii::$app->user->isGuest){
         echo Nav::widget([
@@ -100,6 +84,9 @@ AppAsset::register($this);
     ?>
 
     <div class="container">
+        <?php
+        echo __DIR__;
+        ?>
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>

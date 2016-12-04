@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Download;
 use app\models\Foto;
+use app\models\Usuario;
 use app\models\Visualizacao;
 use Yii;
 use yii\data\Pagination;
@@ -71,10 +72,14 @@ class SiteController extends Controller
         if($parametro != null){
             $modelFoto = Foto::findByLike($parametro);
         }else {
-            $modelFoto = Foto::find()->limit(18)->all();
+            $modelFoto = Foto::findBySql('select f.*,count(d.down_data) as downloads from foto f
+                                    join download d using (foto_id)
+                                    group by f.foto_id 
+                                    order by downloads desc')->limit(18)->all();
         }
         foreach ($modelFoto as $foto) {
-            $foto->downloads = sizeof(Download::findByFoto($foto->foto_id));
+            $foto->usu_login = Usuario::findIdentity($foto->usu_id);
+            $foto->downloads = sizeof(Download::findByFoto($foto->foto_id))-1;
             $foto->visualizacoes = sizeof(Visualizacao::findByFoto($foto->foto_id));
         }
 

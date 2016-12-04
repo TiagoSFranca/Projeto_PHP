@@ -58,10 +58,11 @@ class FotoController extends Controller
         }
     }
 
-    public function actionUpdate($id)
+    public function actionUpdate()
     {
         if ($this->verificarLogin()) {
-            $model = $this->findModel($id);
+            $id = Yii::$app->getRequest()->post();
+            $model = $this->findModel($id['id']);
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
                 Yii::$app->getSession()->setFlash('sucess', 'Edição realizado Com Sucesso.');
@@ -76,9 +77,10 @@ class FotoController extends Controller
         }
     }
 
-    public function actionSee($id)
+    public function actionSee()
     {
-        $model = $this->findModel($id);
+        $id = Yii::$app->getRequest()->post();
+        $model = $this->findModel($id['id']);
         if (Yii::$app->user->getId() !== $model->usu_id || Yii::$app->user->isGuest){
             $modelSee = new Visualizacao();
             $modelSee->visu_data = date('y-m-d');

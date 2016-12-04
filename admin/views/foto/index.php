@@ -128,6 +128,9 @@ $this->registerJs($js);
                             <div class="caption">
                                 <h5><?= $foto->foto_nome ?></h5>
                                 <p class="text-center">
+                                    <i class="glyphicon glyphicon-user gi-2x  uneditable-input"></i> <?= $foto->usu_login->usu_login?>
+                                </p>
+                                <p class="text-center">
                                     <i class="glyphicon glyphicon-eye-open gi-2x uneditable-input"></i> <?= $foto->visualizacoes ?>
                                     <i class="glyphicon glyphicon-download gi-2x  uneditable-input marginalizado"></i> <?= $foto->downloads ?>
                                 </p>

@@ -150,7 +150,7 @@ class Usuario extends ActiveRecord implements  IdentityInterface
     }
 
     public static function findByLike($param){
-        $query = Usuario::findBySql("SELECT * FROM USUARIO WHERE ace_id = 2 AND (usu_login like '%$param%' OR usu_nome like '%$param%' OR usu_email like '%$param%')")->all();
+        $query = Usuario::findBySql("SELECT * FROM USUARIO WHERE ace_id = 2 AND (usu_login like '%$param%' OR usu_nome like '%$param%' OR usu_email like '%$param%')")->orderBy('usu_nome')->all();
         return $query;
 
     }

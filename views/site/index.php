@@ -3,8 +3,7 @@
 /* @var $this yii\web\View */
 
 use yii\bootstrap\Html;
-use app\models\Download;
-use app\models\Visualizacao;
+use yii\widgets\ActiveForm;
 
 $this->title = 'Início';
 $script = <<<CSS
@@ -91,6 +90,27 @@ $this->registerJs($js);
         Yii::$app->session->getFlash('sucess');
         ?>
     </p>
+    <?php
+    $form = ActiveForm::begin([
+        'action' => ['site/index'],
+        'method' => 'get',
+    ]);
+    ?>
+    <div class="col-sm-5 col-md-5 col-lg-12">
+        <form class="navbar-form" role="search">
+            <div class="input-group col-sm-5 col-md-5 pull-right">
+                <input type="text" class="form-control" placeholder="Pesquisar" name="q" >
+                <div class="input-group-btn">
+                    <?= Html::submitButton('<i class="glyphicon glyphicon-search gi"></i>', ['class' => 'btn btn-primary']) ?>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <?php ActiveForm::end(); ?>
+    <?php
+    echo __DIR__;
+    ?>
     <div class="container">
         <div class="row">
             <?php
@@ -103,6 +123,9 @@ $this->registerJs($js);
                             <h5 class="text-center"><?= $foto->foto_nome?></h5>
                             <br>
                             <p class="text-center">
+                                <i class="glyphicon glyphicon-user gi-2x  uneditable-input"></i> <?= $foto->usu_login->usu_login?>
+                            </p>
+                            <p class="text-center">
                                 <i class="glyphicon glyphicon-eye-open gi-2x uneditable-input top-left"></i> <?= $foto->visualizacoes?>
                                 <i class="glyphicon glyphicon-download gi-2x  uneditable-input"></i> <?= $foto->downloads?>
                             </p>
@@ -110,8 +133,14 @@ $this->registerJs($js);
                                 <?=
                                 Html::a(
                                     "Ver" ,
-                                    ['foto/see', 'id' => $foto->foto_id],
-                                    ['class' => 'btn btn-primary']
+                                    ['foto/see'],
+                                    ['class' => 'btn btn-primary',
+                                        'data' => [
+                                            'method' => 'post',
+                                            'params'=>[
+                                                'id' => $foto->foto_id
+                                            ]
+                                        ],]
                                 )
                                 ?>
                                 <?=
@@ -123,7 +152,7 @@ $this->registerJs($js);
                                 ?>
                             </p>
                         </div>
-                        <a class="ratio img-responsive img-circle" style="background-image: url(<?='../..'.$foto->foto_caminho?>);"></a>
+                        <a class="ratio img-responsive img-circle" style="background-image: url(<?='__DIR__/../../../../basicNew/'.$foto->foto_caminho?>);"></a>
 
                     </div>
                 </div>

@@ -80,6 +80,10 @@ class FotoForm extends Model
                 $foto->foto_caminho = $path . $this->tratarNomeFoto() . '.' . $this->foto_caminho->extension;
                 $foto->foto_data_upload = date('y-m-d');;
                 $foto->save();
+                $down = new Download();
+                $down->foto_id = $this->tratarNomeFoto()-1;
+                $down->down_data = '0000-00-00';
+                $down->save();
                 return true;
             }
             return false;

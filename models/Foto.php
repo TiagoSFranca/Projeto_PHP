@@ -70,9 +70,9 @@ class Foto extends \yii\db\ActiveRecord
     public static function findByLike($param,$user_id = null)
     {
         $query = Foto::find()->andFilterWhere(['like', 'foto_nome', $param])
-            ->orFilterWhere(['like', 'foto_tag', $param])->all();
+            ->orFilterWhere(['like', 'foto_tag', $param])->orderBy('foto_nome')->all();
         if($user_id != null)
-            $query = Foto::findBySql("SELECT * FROM foto where usu_id = $user_id and (foto_nome like '%$param%' or foto_tag like '%$param%');")->orderBy(['foto_downloads' => SORT_DESC])->all();
+            $query = Foto::findBySql("SELECT * FROM foto where usu_id = $user_id and (foto_nome like '%$param%' or foto_tag like '%$param%');")->orderBy(['foto_nome' => SORT_DESC])->all();
 
         return $query;
     }
